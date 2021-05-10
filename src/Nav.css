@@ -1,3 +1,7 @@
-Nav.Link {
-  color: black ;
+.nav-link {
+  color: #666666;
+}
+
+a {
+  color: #666666;
 }

@@ -3,16 +3,17 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "../Footer.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+// import Linkedin-Logo.png from ".../public/Linkedin-Logo.png"
 
 class Footer extends React.Component {
   render() {
     return (
-        
       <Container fluid="md">
         <hr />
         <Row>
-          <Col className="mr-2">
-            <i class="bi bi-question-circle-fill fs-5"></i>{" "}
+          <Col className="mr-5">
+            <i className="bi bi-linkedin fs-3 "></i>
+            {/* <img src="public\Linkedin-Logo.png" alt="" /> */}
           </Col>
         </Row>
         <Row>
@@ -45,9 +46,9 @@ class Footer extends React.Component {
           <Col xs={3}>
             <ul>
               <li className="footerlist">
-                {/* <i class="bi bi-question-circle-fill fs-5"></i>{" "} */}
+                {/* <i className="bi bi-question-circle-fill fs-5 mr-5"></i>{" "} */}
                 <span>
-                  <a>Questions</a> <br />
+                  <a>Questions</a>
                   <p className="text-muted">Visit our Help Center</p>
                 </span>
               </li>
