@@ -1,20 +1,19 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "./style.css";
-import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import MyNav from "./components/MyNav.jsx";
-import Footer from "./components/Footer.jsx";
+import logo from "./logo.svg"
+import "./App.css"
+import React from "react"
+import Home from "./components/Home"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 
-const App = () => {
-  return (
-    <div className="App">
+class App extends React.Component {
+  state = {}
+
+  render() {
+    return (
       <Router>
-        <MyNav />
-        <Footer />
+        <Route component={Home} path="/" />
       </Router>
-    </div>
-  );
-};
+    )
+  }
+}
 
-export default App;
+export default App
