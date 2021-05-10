@@ -9,6 +9,8 @@ import {
 } from "react-bootstrap";
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import "../Nav.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 class MyNav extends React.Component {
   render() {
@@ -18,7 +20,7 @@ class MyNav extends React.Component {
         <Container>
           <Nav className="mr-auto">
             <Navbar.Brand href="#home">
-              <i className="bi bi-linkedin"></i>
+              <i className="bi bi-linkedin fs-3 "></i>
             </Navbar.Brand>
             <Form>
               <FormControl
