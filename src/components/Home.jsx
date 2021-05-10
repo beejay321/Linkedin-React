@@ -1,6 +1,7 @@
 import React from "react"
 import JumboProfile from "./JumboProfile"
 import { Container, Row, Col } from "react-bootstrap"
+import Sidebar from "./Sidebar/Sidebar"
 
 class Home extends React.Component {
   state = {}
@@ -14,7 +15,9 @@ class Home extends React.Component {
               <Col xs={8}>
                 <JumboProfile />
               </Col>
-              <Col xs={4}></Col>
+              <Col xs={4}>
+                <Sidebar />
+              </Col>
             </Row>
           </Col>
         </Row>

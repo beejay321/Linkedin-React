@@ -3,6 +3,8 @@ import "./App.css"
 import React from "react"
 import Home from "./components/Home"
 import { BrowserRouter as Router, Route } from "react-router-dom"
+import MyNav from "./components/MyNav"
+import Footer from "./components/Footer"
 
 class App extends React.Component {
   state = {}
@@ -10,7 +12,9 @@ class App extends React.Component {
   render() {
     return (
       <Router>
+        <MyNav />
         <Route component={Home} path="/" />
+        <Footer />
       </Router>
     )
   }
