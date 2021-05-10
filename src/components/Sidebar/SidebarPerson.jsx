@@ -5,20 +5,22 @@ import { Image, Row, Col, Button } from "react-bootstrap";
 function SidebarPerson() {
   return (
     <>
-      <Col xs={4}>
+      <Col xs={3}>
         <Image
           className="sidebar-img"
           src="https://placeimg.com/640/480/people"
-          roundedCircle
         />
       </Col>
-      <Col xs={8}>
-        <span>Person 1 </span>
-        <span className="text-muted">{"\u2022"}</span>
-        <span className="text-muted"> 2nd</span>
-        <p className="text-muted">Cras justo odio</p>
+      <Col xs={9} className="align-text-bottom">
+        <span className="sidebar-person-name">Person 1 </span>
+        <span className="sidebar-span text-muted">{"\u2022"}</span>
+        <span className="sidebar-span text-muted"> 2nd</span>
+        <p className="sidebar-p text-muted">Developer Student (Front-End)</p>
+      </Col>
+      <Col xs={3}></Col>
+      <Col xs={9}>
         <Button
-          className="sidebar-btn text-muted"
+          className="sidebar-btn text-muted mb-3 mt-1"
           variant="outline-dark"
           size="sm"
         >

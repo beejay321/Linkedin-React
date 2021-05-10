@@ -1,7 +1,7 @@
 .sidebar-img {
-  width: 65px;
-  height: 65px;
-  border: red 4px solid;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
 }
 
 .sidebar-btn {
@@ -23,4 +23,21 @@
 .list-group-item span:nth-child(1) {
   color: #0f0f0f !important;
   font-weight: 600;
+}
+
+.list-group-item span:nth-child(3) {
+  font-size: 14px;
+}
+
+.list-group-item p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.col-3 {
+  /* border: 2px blue solid; */
+}
+.col-9 {
+  /* border: blueviolet solid 2px; */
+  padding-left: 0 !important;
 }

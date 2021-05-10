@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import { Row, Col, ListGroup, Collapse } from "react-bootstrap";
+import { Image, Row, Col, ListGroup, Collapse } from "react-bootstrap";
 import SidebarPerson from "./SidebarPerson.jsx";
 
 function Sidebar() {
@@ -10,7 +10,9 @@ function Sidebar() {
     <>
       <ListGroup>
         <ListGroup.Item>
-          <h4 id="sidebar-heading">People also viewed</h4>
+          <h4 id="sidebar-heading" className="mt-3 mb-3">
+            People also viewed
+          </h4>
           <Row>
             <SidebarPerson />
             <SidebarPerson />
@@ -20,13 +22,13 @@ function Sidebar() {
         <ListGroup.Item>
           <h4
             onClick={() => setOpen(!open)}
-            aria-controls="example-collapse-text"
+            aria-controls="collapse-text"
             aria-expanded={open}
           >
             Show More
           </h4>
           <Collapse in={open}>
-            <Row id="example-collapse-text">
+            <Row id="collapse-text">
               <SidebarPerson />
               <SidebarPerson />
             </Row>
