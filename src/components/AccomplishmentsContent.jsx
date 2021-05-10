@@ -1,6 +1,6 @@
 import ExpEduCard from "./ExpEduCard"
 import AccomplishmentsCard from "./AccomplishmentsCard"
-const EducationContent = (props) => {
+const AccomplishmentsContent = (props) => {
   return (
     <>
       <AccomplishmentsCard
@@ -19,12 +19,8 @@ const EducationContent = (props) => {
           "React",
         ]}
       />
-      <AccomplishmentsCard
-        type="Cooking"
-        accomplishments={["Pasta", "Pizza"]}
-      />
     </>
   )
 }
 
-export default EducationContent
+export default AccomplishmentsContent

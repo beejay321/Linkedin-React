@@ -8,6 +8,7 @@ import ExperienceContent from "./ExperienceContent"
 import EducationContent from "./EducationContent"
 import SkillsContent from "./SkillsContent"
 import AccomplishmentsContent from "./AccomplishmentsContent"
+import InterestsContent from "./InterestsContent"
 
 class Home extends React.Component {
   state = {}
@@ -34,7 +35,7 @@ class Home extends React.Component {
                   title="Accomplishments"
                   content={<AccomplishmentsContent />}
                 />
-                <CardProfile title="Interests" />
+                <CardProfile title="Interests" content={<InterestsContent />} />
               </Col>
               <Col xs={4}>
                 <Sidebar />
