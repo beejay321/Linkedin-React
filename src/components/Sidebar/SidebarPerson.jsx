@@ -16,8 +16,12 @@ function SidebarPerson() {
         <span>Person 1 </span>
         <span className="text-muted">{"\u2022"}</span>
         <span className="text-muted"> 2nd</span>
-        <p>Cras justo odio</p>
-        <Button className="sidebar-btn text-muted" variant="outline-dark">
+        <p className="text-muted">Cras justo odio</p>
+        <Button
+          className="sidebar-btn text-muted"
+          variant="outline-dark"
+          size="sm"
+        >
           Message
         </Button>
       </Col>
