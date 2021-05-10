@@ -22,31 +22,23 @@ export default function Sidebar() {
   }, []);
   console.log("profilesData", profilesData);
   function mapProfiles() {
-    return profilesData.slice(-7).map((profile) => {
+    return profilesData.slice(88).map((profile) => {
       return (
-        <Accordion defaultActiveKey="0">
-          <SidebarPerson
-            key={profile._id}
-            id={profile._id}
-            image={profile.image}
-            name={profile.name}
-            surname={profile.surname}
-            title={profile.title}
-          />
-          <Accordion.Toggle as={Card.Header} eventKey="0">
-            Click me!
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey="0">
-            more profiles appear. use a map?
-          </Accordion.Collapse>
-        </Accordion>
+        <SidebarPerson
+          key={profile._id}
+          id={profile._id}
+          image={profile.image}
+          name={profile.name}
+          surname={profile.surname}
+          title={profile.title}
+        />
       );
     });
   }
   return (
     <div className="p-3 my-2 border bg-white round-border">
       <h5 className="mt-2 text-left">People also viewed</h5>
-      <div className="d-flex flex-column my-4">{mapProfiles(104)}</div>
+      <div className="d-flex flex-column my-4">{mapProfiles(5)}</div>
     </div>
   );
 }
