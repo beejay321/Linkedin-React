@@ -9,10 +9,14 @@ class Home extends React.Component {
     return (
       <Container>
         <Row>
-          <Col xs={8}>
-            <JumboProfile />
+          <Col xs={{ offset: 1, span: 10 }}>
+            <Row>
+              <Col xs={8}>
+                <JumboProfile />
+              </Col>
+              <Col xs={4}></Col>
+            </Row>
           </Col>
-          <Col xs={4}></Col>
         </Row>
       </Container>
     )
