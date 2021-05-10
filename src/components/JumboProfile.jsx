@@ -6,19 +6,18 @@ const JumboProfile = (props) => {
     <Card>
       <div className="img-container"></div>
       <Card.Body>
-        <img
-          className="avatar"
-          src="https://arced.it/wp-content/uploads/2018/10/portrait-square-03.jpg"
-        />
-        <Card.Title className="mt-5">Aaron Benwell</Card.Title>
+        <img className="avatar" src={props.image} />
+        <Card.Title className="mt-5">
+          {props.name} {props.surname}
+        </Card.Title>
         <Card.Text>
           <p>
-            Web developer
+            {props.title}
             <br />
             Creating synergy between clint expectations and product delivery
           </p>
           <p className="location-line">
-            Vercelli, Italy •{" "}
+            {props.area} •{" "}
             <span className="text-primary">
               <b>75 Connections • Contact info</b>
             </span>
