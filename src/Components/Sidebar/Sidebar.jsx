@@ -1,6 +1,6 @@
-import { Component } from "react";
-import "./Sidebar.css";
-import { Button, ListGroup } from "react-bootstrap";
+import { Component } from "react"
+import "./Sidebar.css"
+import { Button, ListGroup } from "react-bootstrap"
 
 class Sidebar extends Component {
   render() {
@@ -13,7 +13,7 @@ class Sidebar extends Component {
           <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
         </ListGroup>
       </>
-    );
+    )
   }
 }
-export default Sidebar;
+export default Sidebar
