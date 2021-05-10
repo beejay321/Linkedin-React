@@ -1,0 +1,19 @@
+.img-container {
+  height: 10rem;
+  background: url("https://images.photowall.com/products/60869/azores-mountain-landscape-1.jpg?h=699&q=85");
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.avatar {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid white;
+  height: 9rem;
+  top: 4rem;
+}
+
+.location-line {
+  font-size: 13px;
+}
