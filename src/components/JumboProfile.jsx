@@ -1,17 +1,31 @@
-import { Jumbotron, Button } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
+import "../JumboProfile.css"
 
 const JumboProfile = (props) => {
   return (
-    <Jumbotron className="bg-warning">
-      <h1>Hello, world!</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
-      <p>
-        <Button variant="secondary">Learn more</Button>
-      </p>
-    </Jumbotron>
+    <Card>
+      <div className="img-container"></div>
+      <Card.Body>
+        <img
+          className="avatar"
+          src="https://arced.it/wp-content/uploads/2018/10/portrait-square-03.jpg"
+        />
+        <Card.Title className="mt-5">Hedri Helena Nel</Card.Title>
+        <Card.Text>
+          <p>
+            Web developer
+            <br />
+            Creating synergy between clint expectations and product delivery
+          </p>
+          <p className="location-line">
+            Vercelli, Italy •{" "}
+            <span className="text-primary">
+              <b>75 Connections • Contact info</b>
+            </span>
+          </p>
+        </Card.Text>
+      </Card.Body>
+    </Card>
   )
 }
 
