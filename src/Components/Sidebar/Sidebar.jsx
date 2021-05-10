@@ -1,5 +1,5 @@
 import "./Sidebar.css";
-import { Accordion, Card } from "react-bootstrap";
+import { Accordion, Card, Button } from "react-bootstrap";
 import SidebarPerson from "./SidebarPerson.jsx";
 import { useState, useEffect } from "react";
 
@@ -21,8 +21,8 @@ export default function Sidebar() {
     updateProfilesData(await getAllProfiles(auth));
   }, []);
   console.log("profilesData", profilesData);
-  function mapProfiles() {
-    return profilesData.slice(88).map((profile) => {
+  function mapProfiles(limit) {
+    return profilesData.slice(-20, limit).map((profile) => {
       return (
         <SidebarPerson
           key={profile._id}
@@ -38,7 +38,19 @@ export default function Sidebar() {
   return (
     <div className="p-3 my-2 border bg-white round-border">
       <h5 className="mt-2 text-left">People also viewed</h5>
-      <div className="d-flex flex-column my-4">{mapProfiles(5)}</div>
+      <div className="d-flex flex-column my-4">
+        {mapProfiles(80)}
+        <Accordion defaultActiveKey="0">
+          <Card.Header>
+            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+              Show More
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body> {mapProfiles(90)}</Card.Body>
+          </Accordion.Collapse>
+        </Accordion>
+      </div>
     </div>
   );
 }
