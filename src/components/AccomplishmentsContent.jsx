@@ -19,6 +19,10 @@ const EducationContent = (props) => {
           "React",
         ]}
       />
+      <AccomplishmentsCard
+        type="Cooking"
+        accomplishments={["Pasta", "Pizza"]}
+      />
     </>
   )
 }
