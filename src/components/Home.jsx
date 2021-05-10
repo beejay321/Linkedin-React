@@ -6,6 +6,8 @@ import CardProfile from "./CardProfile"
 import About from "./AboutProfile"
 import ExperienceContent from "./ExperienceContent"
 import EducationContent from "./EducationContent"
+import SkillsContent from "./SkillsContent"
+import AccomplishmentsContent from "./AccomplishmentsContent"
 
 class Home extends React.Component {
   state = {}
@@ -24,9 +26,14 @@ class Home extends React.Component {
                   content={<ExperienceContent />}
                 />
                 <CardProfile title="Education" content={<EducationContent />} />
-                <CardProfile title={"Skills & Endorsements"} />
-                <CardProfile title="Reccomendations" />
-                <CardProfile title="Accomplishments" />
+                <CardProfile
+                  title={"Skills & Endorsements"}
+                  content={<SkillsContent />}
+                />
+                <CardProfile
+                  title="Accomplishments"
+                  content={<AccomplishmentsContent />}
+                />
                 <CardProfile title="Interests" />
               </Col>
               <Col xs={4}>
