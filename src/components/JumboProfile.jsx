@@ -10,7 +10,7 @@ const JumboProfile = (props) => {
           className="avatar"
           src="https://arced.it/wp-content/uploads/2018/10/portrait-square-03.jpg"
         />
-        <Card.Title className="mt-5">Hedri Helena Nel</Card.Title>
+        <Card.Title className="mt-5">Aaron Benwell</Card.Title>
         <Card.Text>
           <p>
             Web developer

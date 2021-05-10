@@ -4,6 +4,8 @@ import { Container, Row, Col } from "react-bootstrap"
 import Sidebar from "./Sidebar/Sidebar"
 import CardProfile from "./CardProfile"
 import About from "./AboutProfile"
+import ExperienceContent from "./ExperienceContent"
+import EducationContent from "./EducationContent"
 
 class Home extends React.Component {
   state = {}
@@ -17,8 +19,11 @@ class Home extends React.Component {
               <Col xs={8}>
                 <JumboProfile />
                 <CardProfile title="About" content={<About />} />
-                <CardProfile title="Experience" />
-                <CardProfile title="Education" />
+                <CardProfile
+                  title="Experience"
+                  content={<ExperienceContent />}
+                />
+                <CardProfile title="Education" content={<EducationContent />} />
                 <CardProfile title={"Skills & Endorsements"} />
                 <CardProfile title="Reccomendations" />
                 <CardProfile title="Accomplishments" />
