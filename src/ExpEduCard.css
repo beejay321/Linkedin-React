@@ -11,3 +11,15 @@
 .text-size {
   font-size: 13px;
 }
+
+.bi-pencil {
+  opacity: 0;
+}
+
+i.bi-pencil:hover {
+  opacity: 1;
+  transition-timing-function: ease-in;
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+}
