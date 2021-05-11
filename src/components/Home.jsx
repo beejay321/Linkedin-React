@@ -9,7 +9,7 @@ import EducationContent from "./EducationContent"
 import SkillsContent from "./SkillsContent"
 import AccomplishmentsContent from "./AccomplishmentsContent"
 import InterestsContent from "./InterestsContent"
-
+import Example from "./Modal/MyModal"
 class Home extends React.Component {
   state = {
     user: {},
@@ -67,6 +67,7 @@ class Home extends React.Component {
           <Col xs={{ offset: 1, span: 10 }}>
             <Row>
               <Col xs={8}>
+                <Example />
                 <JumboProfile
                   name={this.state.user.name}
                   surname={this.state.user.surname}
