@@ -9,7 +9,7 @@ import EducationContent from "./EducationContent"
 import SkillsContent from "./SkillsContent"
 import AccomplishmentsContent from "./AccomplishmentsContent"
 import InterestsContent from "./InterestsContent"
-import Example from "./Modal/MyModal"
+
 class Home extends React.Component {
   state = {
     user: {},
@@ -60,14 +60,12 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <Container>
         <Row>
           <Col xs={{ offset: 1, span: 10 }}>
             <Row>
               <Col xs={8}>
-                <Example />
                 <JumboProfile
                   name={this.state.user.name}
                   surname={this.state.user.surname}
@@ -76,27 +74,39 @@ class Home extends React.Component {
                   image={this.state.user.image}
                 />
                 <CardProfile
+                  user={this.state.user._id}
                   title="About"
                   content={<About bio={this.state.user.bio} />}
                 />
                 <CardProfile
                   title="Experience"
+                  user={this.state.user._id}
                   content={
                     <ExperienceContent
                       experiences={this.state.userExperiences}
                     />
                   }
                 />
-                <CardProfile title="Education" content={<EducationContent />} />
                 <CardProfile
+                  user={this.state.user._id}
+                  title="Education"
+                  content={<EducationContent />}
+                />
+                <CardProfile
+                  user={this.state.user._id}
                   title={"Skills & Endorsements"}
                   content={<SkillsContent />}
                 />
                 <CardProfile
+                  user={this.state.user._id}
                   title="Accomplishments"
                   content={<AccomplishmentsContent />}
                 />
-                <CardProfile title="Interests" content={<InterestsContent />} />
+                <CardProfile
+                  user={this.state.user._id}
+                  title="Interests"
+                  content={<InterestsContent />}
+                />
               </Col>
               <Col xs={4}>
                 <Sidebar />
