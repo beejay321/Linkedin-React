@@ -12,8 +12,10 @@ class Footer extends React.Component {
         <hr />
         <Row>
           <Col className="mr-5">
-            <i className="bi bi-linkedin fs-3 "></i>
-            {/* <img src="public\Linkedin-Logo.png" alt="" /> */}
+            <ul>
+              <i className="bi bi-linkedin fs-3 "></i>
+              {/* <img src="public\Linkedin-Logo.png" alt="" /> */}
+            </ul>
           </Col>
         </Row>
         <Row>
@@ -45,19 +47,18 @@ class Footer extends React.Component {
 
           <Col xs={3}>
             <ul>
-              <li className="footerlist">
-                {/* <i className="bi bi-question-circle-fill fs-5 mr-5"></i>{" "} */}
+              <li className="footerlist footer-flex mr-3">
+                <i className="bi bi-question-circle-fill fs-4 mr-3"></i>{" "}
                 <span>
                   <a>Questions</a>
                   <p className="text-muted">Visit our Help Center</p>
                 </span>
               </li>
-              <li className="footerlist">
-                {" "}
-                {/* <i class="bi bi-gear-fill fs-5"></i>{" "} */}
+              <li className="footerlist footer-flex">
+                <i className="bi bi-gear-fill fs-5 mr-3"></i>{" "}
                 <span>
-                  <a>Manage your account and Privacy</a>
-                  <p className="text-muted">Go to your Settings</p>{" "}
+                  <a>Manage your account</a>
+                  <p className="text-muted">Go to your Settings</p>
                 </span>
               </li>
             </ul>

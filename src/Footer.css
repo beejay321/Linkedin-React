@@ -13,3 +13,11 @@ body {
   margin-top: 1rem;
   font-size: 0.8rem;
 }
+
+.footer-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* .footer-flex .bi {
+margin-right: 50px
+} */

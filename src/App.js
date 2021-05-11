@@ -15,6 +15,7 @@ class App extends React.Component {
       <Router>
         <MyNav />
         <Route component={Home} path="/" />
+        <Route component={Home} path="/user/:id" />
         <Footer />
       </Router>
     )
