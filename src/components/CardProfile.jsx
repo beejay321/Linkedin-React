@@ -1,5 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 import "../CardProfile.css";
+import Example from "./Modal/MyModal";
 
 const CardProfile = (props) => {
   return (
@@ -8,7 +9,7 @@ const CardProfile = (props) => {
         <div className=" d-flex justify-content-between">
           <div className="section-title mb-3">{props.title}</div>
           <div>
-            <i class="bi bi-plus fs-3"></i>
+            <Example />
           </div>
         </div>
         <div className="text-size">{props.content}</div>

@@ -16,6 +16,9 @@ import { useState } from "react";
 //edit
 
 export default function Example() {
+
+
+  
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -23,9 +26,10 @@ export default function Example() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      {/* <Button variant="primary" onClick={handleShow}>
         Launch demo modal
-      </Button>
+      </Button> */}
+      <i class="bi bi-plus fs-3" onClick={handleShow}></i>
 
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
