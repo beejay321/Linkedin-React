@@ -74,7 +74,7 @@ export default function ModalShow(props) {
               <Form.Label>Start date</Form.Label>
               <Form.Control
                 id="startDate"
-                type="text"
+                type="datetime-local"
                 placeholder="Start date..."
                 value={props.startDate}
                 onChange={props.handleChange}
