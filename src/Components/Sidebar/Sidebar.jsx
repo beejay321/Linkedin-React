@@ -22,7 +22,7 @@ export default function Sidebar() {
   }, []);
   console.log("profilesData", profilesData);
   function mapProfiles(limit) {
-    return profilesData.slice(1, limit).map((profile) => {
+    return profilesData.slice(limit, randomInteger(95, 101)).map((profile) => {
       return (
         <SidebarPerson
           key={profile._id}
@@ -36,7 +36,7 @@ export default function Sidebar() {
     });
   }
   function mapProfileShowMore(limit) {
-    return profilesData.slice(80, limit).map((profile) => {
+    return profilesData.slice(limit, randomInteger(55, 62)).map((profile) => {
       return (
         <SidebarPerson
           key={profile._id}
@@ -49,16 +49,19 @@ export default function Sidebar() {
       );
     });
   }
+  function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
   return (
     <Card className="sidebar">
       <Card.Header className="bg-white border-0">
         <h5 className="mt-2 text-left">People also viewed</h5>
       </Card.Header>
       <div className="d-flex flex-column my-4">
-        <Card.Body>{mapProfiles(5)}</Card.Body>
+        <Card.Body>{mapProfiles(randomInteger(91, 94))}</Card.Body>
         <Accordion defaultActiveKey="0">
           <Accordion.Collapse eventKey="1">
-            <Card.Body> {mapProfileShowMore(85)}</Card.Body>
+            <Card.Body> {mapProfileShowMore(randomInteger(45, 49))}</Card.Body>
           </Accordion.Collapse>
           <Card.Header
             onclick="myFunction()"
