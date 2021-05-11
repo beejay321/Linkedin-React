@@ -14,8 +14,7 @@ class App extends React.Component {
     return (
       <Router>
         <MyNav />
-        <Route component={Home} path="/" />
-        <Route component={Home} path="/user/:id" />
+        <Route component={Home} path="/:id" />
         <Footer />
       </Router>
     )
