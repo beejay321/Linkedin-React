@@ -1,9 +1,8 @@
 import logo from "./logo.svg"
 import "./App.css"
-
 import React from "react"
 import Home from "./components/Home"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom"
 import MyNav from "./components/MyNav"
 import Footer from "./components/Footer"
 
@@ -14,6 +13,9 @@ class App extends React.Component {
     return (
       <Router>
         <MyNav />
+        <Route exact path="/">
+          {<Redirect to="/me" />}
+        </Route>
         <Route component={Home} path="/:id" />
         <Footer />
       </Router>
