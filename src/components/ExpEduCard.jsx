@@ -1,5 +1,5 @@
-import { Row, Col } from "react-bootstrap"
-import "../ExpEduCard.css"
+import { Row, Col } from "react-bootstrap";
+import "../ExpEduCard.css";
 
 const ExpEduCard = (props) => {
   return (
@@ -8,7 +8,7 @@ const ExpEduCard = (props) => {
         <img className="img-fluid px-3" src={props.img} />
       </Col>
 
-      <Col xs={10}>
+      <Col xs={9}>
         <span className="title">{props.jobOrSchool}</span>
         <br />
         {props.companyOrSubject}
@@ -21,8 +21,11 @@ const ExpEduCard = (props) => {
         </span>
         {props.description}
       </Col>
+      <Col xs={1}>
+        <i class="bi bi-pencil fs-7"></i>
+      </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ExpEduCard
+export default ExpEduCard;
