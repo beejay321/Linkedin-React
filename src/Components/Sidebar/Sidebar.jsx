@@ -1,5 +1,5 @@
 import "./Sidebar.css";
-import { Accordion, Card, Button } from "react-bootstrap";
+import { Accordion, Card, Button, ListGroup } from "react-bootstrap";
 import SidebarPerson from "./SidebarPerson.jsx";
 import { useState, useEffect } from "react";
 
@@ -22,7 +22,21 @@ export default function Sidebar() {
   }, []);
   console.log("profilesData", profilesData);
   function mapProfiles(limit) {
-    return profilesData.slice(-20, limit).map((profile) => {
+    return profilesData.slice(1, limit).map((profile) => {
+      return (
+        <SidebarPerson
+          key={profile._id}
+          id={profile._id}
+          image={profile.image}
+          name={profile.name}
+          surname={profile.surname}
+          title={profile.title}
+        />
+      );
+    });
+  }
+  function mapProfileShowMore(limit) {
+    return profilesData.slice(80, limit).map((profile) => {
       return (
         <SidebarPerson
           key={profile._id}
@@ -36,22 +50,28 @@ export default function Sidebar() {
     });
   }
   return (
-    <div className="p-3 my-2 border bg-white round-border">
-      <h5 className="mt-2 text-left">People also viewed</h5>
+    <Card className="sidebar">
+      <Card.Header className="bg-white border-0">
+        <h5 className="mt-2 text-left">People also viewed</h5>
+      </Card.Header>
       <div className="d-flex flex-column my-4">
-        {mapProfiles(80)}
+        <Card.Body>{mapProfiles(5)}</Card.Body>
         <Accordion defaultActiveKey="0">
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+          <Accordion.Collapse eventKey="1">
+            <Card.Body> {mapProfileShowMore(85)}</Card.Body>
+          </Accordion.Collapse>
+          <Card.Header
+            onclick="myFunction()"
+            id="sidebar-showmore"
+            className="p-0 m-0 full-width text-center bg-white"
+          >
+            <Accordion.Toggle as={Button} variant="link" eventKey="1">
               Show More
             </Accordion.Toggle>
           </Card.Header>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body> {mapProfiles(90)}</Card.Body>
-          </Accordion.Collapse>
         </Accordion>
       </div>
-    </div>
+    </Card>
   );
 }
 
