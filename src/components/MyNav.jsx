@@ -19,12 +19,27 @@ class MyNav extends React.Component {
     return (
       // <h1>Linked in </h1>
       <>
+        {/* <Navbar bg="light" variant="white">
+          <Container>
+            <Row>
+              <Nav className="mr-auto ">
+                <Col>
+                  <h1>Navbar</h1>
+                </Col>
+                <Col>
+                  <h1>Navbar</h1>
+                </Col>
+              </Nav>
+            </Row>
+          </Container>
+        </Navbar> */}
+
         <Navbar bg="light" variant="white">
-          <Container className="mx-auto">
-            <Nav className="mr-auto mb-3">
+          <Container>
+            <Nav className="ml-5">
               <Navbar.Brand href="#home">
                 <h1>
-                  <i className="bi bi-linkedin fs-1 "></i>
+                  <i className="bi bi-linkedin fs-1 mb-3 "></i>
                 </h1>
               </Navbar.Brand>
 
@@ -47,34 +62,57 @@ class MyNav extends React.Component {
             <Nav className="mr-auto">
               <Nav.Link href="#home">
                 <i className="bi bi-house-door-fill"></i>
-                <p>Home</p>
+                <span>Home</span>
               </Nav.Link>
               <Nav.Link href="#mynetwork">
                 {" "}
                 <i className="bi bi-people-fill"></i>
-                <p>My Network</p>
+                <span>My Network</span>
               </Nav.Link>
               <Nav.Link href="#jobs">
-                <i className="bi bi-briefcase-fill"></i> <p>Jobs</p>
+                <i className="bi bi-briefcase-fill"></i> <span>Jobs</span>
               </Nav.Link>
               <Nav.Link href="#pricing">
                 {" "}
                 <i className="bi bi-chat-dots-fill"></i>
-                <p>Messaging</p>
+                <span>Messaging</span>
               </Nav.Link>
               <Nav.Link href="#pricing">
                 <i className="bi bi-bell-fill"></i>
-                <p>Notifications</p>
+                <span>Notifications</span>
               </Nav.Link>
               <Nav.Link href="#pricing">
-                <i className="bi bi-person-circle"></i> <p> Me</p>
+                <i className="bi bi-person-circle"></i>{" "}
+                <span>
+                  {" "}
+                  Me <i id="caretdown" class="bi bi-caret-down-fill"></i>
+                </span>
               </Nav.Link>
-              <Nav.Link href="#pricing">
-                <i className="bi bi-grid-3x3-gap-fill"></i> <p> Work</p>
+              <Nav.Link id="work-icon">
+                <i className="bi bi-grid-3x3-gap-fill"></i>{" "}
+                <span>
+                  {" "}
+                  Work <i id="caretdown" class="bi bi-caret-down-fill"></i>
+                </span>
+              </Nav.Link>
+              <Nav.Link id="reactivate">
+                <span>
+                  Reactivate <br /> Premium
+                </span>
               </Nav.Link>
 
+              {/* <Nav.Link href="#pricing" className="ml-3">
+                <i className="bi bi-grid-3x3-gap-fill"></i>{" "}
+                <span>
+                  <NavDropdown
+                    title="Work"
+                    id="basic-nav-dropdown"
+                  ></NavDropdown>
+                </span>
+              </Nav.Link> */}
+
               {/* <NavDropdown title="Work" id="basic-nav-dropdown">
-                    <i className="bi bi-grid-3x3-gap-fill"></i>
+                    
                   </NavDropdown> */}
             </Nav>
           </Container>
