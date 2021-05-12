@@ -38,40 +38,43 @@ class AddPost extends React.Component {
       console.log(error);
     }
   };
+
   handleChange = (e) => {
-    console.log("text");
-    // this.setState({
-    //   text: e.target.value,
-    // });
+    let id = e.target.id;
+    this.setState({
+      text: { [id]: e.target.value },
+    });
   };
 
   render() {
+    console.log(this.props);
+
     return (
       <>
         <Card>
-          <Card.Body className="d-flex justify-content-between">
-            <Image src="holder.js/171x180" roundedCircle />
+          <Card.Body className="d-flex ">
+            <Image src={this.props.image} height="40" roundedCircle />
+
             {/* <Button variant="secondary" size="md" block>
             Start a Post
           </Button> */}
             <AddPostModal
-              title="my post"
-              //   handleChange={this.handleChange}
-              //   submitPost={this.submitPost}
-              //   text={this.state.text}
+              handleChange={this.handleChange}
+              submitPost={this.submitPost}
+              text={this.state.text}
             />
           </Card.Body>
           <Card.Body className="d-flex justify-content-between">
-            <Button variant="secondary" size="md" block>
-              <span class="badge badge-light">Photo</span>
+            <Button variant="secondary" size="md">
+              <span class="badge badge-dark">Photo</span>
             </Button>{" "}
-            <Button variant="secondary" size="md" block>
+            <Button variant="secondary" size="md">
               <span class="badge badge-light">Video</span>
             </Button>{" "}
-            <Button variant="secondary" size="md" block>
+            <Button variant="secondary" size="md">
               <span class="badge badge-light">Event</span>
             </Button>{" "}
-            <Button variant="secondary" size="md" block>
+            <Button variant="secondary" size="md">
               <span class="badge badge-light">Write article</span>
             </Button>{" "}
           </Card.Body>
