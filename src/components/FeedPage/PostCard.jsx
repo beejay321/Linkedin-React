@@ -37,7 +37,7 @@ function PostCard(props) {
               <DropdownButton
                 as={InputGroup.Prepend}
                 variant="outline-none-secondary"
-                title={<i class="bi bi-x-diamond-fill" />}
+                title={<i class="bi bi-three-dots"></i>}
                 id="input-group-dropdown-1"
               >
                 <Dropdown.Item href="#">Action</Dropdown.Item>
