@@ -1,20 +1,27 @@
-import React from "react"
-import JumboProfile from "./JumboProfile"
-import { Container, Row, Col } from "react-bootstrap"
-import Sidebar from "./Sidebar/Sidebar"
-import CardProfile from "./CardProfile"
-import About from "./AboutProfile"
-import ExperienceContent from "./ExperienceContent"
-import EducationContent from "./EducationContent"
-import SkillsContent from "./SkillsContent"
-import AccomplishmentsContent from "./AccomplishmentsContent"
-import InterestsContent from "./InterestsContent"
-import Example from "./Modal/MyModal"
+import React from "react";
+import JumboProfile from "./JumboProfile";
+import { Container, Row, Col } from "react-bootstrap";
+import Sidebar from "./Sidebar/Sidebar";
+import CardProfile from "./CardProfile";
+import About from "./AboutProfile";
+import ExperienceContent from "./ExperienceContent";
+import EducationContent from "./EducationContent";
+import SkillsContent from "./SkillsContent";
+import AccomplishmentsContent from "./AccomplishmentsContent";
+import InterestsContent from "./InterestsContent";
+import Example from "./MyModal";
+import ModalForm from "./MyModal";
+import AboutModal from "./AboutModal";
+import SkillsModal from "./SkillsModal";
+import SkillsEditModal from "./SkillsEditModal";
+import AboutCard from "./AboutCard";
+import EducationCard from "./EducationCard";
+
 class Home extends React.Component {
   state = {
     user: {},
     userExperiences: [],
-  }
+  };
 
   componentDidMount = async () => {
     try {
@@ -26,19 +33,19 @@ class Home extends React.Component {
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
           },
         }
-      )
+      );
       if (response.ok) {
-        const data = await response.json()
-        this.setState({ user: data })
+        const data = await response.json();
+        this.setState({ user: data });
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 
     const userId =
       this.props.match.params.id === "me"
         ? this.state.user._id
-        : this.props.match.params.id
+        : this.props.match.params.id;
 
     try {
       const xpResponse = await fetch(
@@ -49,25 +56,24 @@ class Home extends React.Component {
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
           },
         }
-      )
+      );
       if (xpResponse.ok) {
-        const xpData = await xpResponse.json()
-        this.setState({ userExperiences: xpData })
+        const xpData = await xpResponse.json();
+        this.setState({ userExperiences: xpData });
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <Container>
         <Row>
-          <Col xs={{ offset: 1, span: 10 }}>
+          <Col>
             <Row>
-              <Col xs={8}>
-                <Example />
+              <Col xs={8} className="mt-5">
                 <JumboProfile
                   name={this.state.user.name}
                   surname={this.state.user.surname}
@@ -75,9 +81,10 @@ class Home extends React.Component {
                   area={this.state.user.area}
                   image={this.state.user.image}
                 />
-                <CardProfile
+                <AboutCard
                   title="About"
                   content={<About bio={this.state.user.bio} />}
+                  modal={<AboutModal />}
                 />
                 <CardProfile
                   title="Experience"
@@ -86,11 +93,17 @@ class Home extends React.Component {
                       experiences={this.state.userExperiences}
                     />
                   }
+                  // modal={<ModalForm />}
                 />
-                <CardProfile title="Education" content={<EducationContent />} />
-                <CardProfile
+                <EducationCard
+                  title="Education"
+                  content={<EducationContent />}
+                />
+                <AboutCard
                   title={"Skills & Endorsements"}
                   content={<SkillsContent />}
+                  modal={<SkillsModal />}
+                  editSkill={<SkillsEditModal />}
                 />
                 <CardProfile
                   title="Accomplishments"
@@ -105,8 +118,8 @@ class Home extends React.Component {
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;

@@ -1,15 +1,17 @@
 import { Card, Button } from "react-bootstrap";
 import "../CardProfile.css";
+import AboutModal from "./AboutModal";
 import ModalForm from "./MyModal";
 
-const CardProfile = (props) => {
+const AboutCard = (props) => {
   return (
     <Card className="my-3">
       <Card.Body>
         <div className=" d-flex justify-content-between">
           <div className="section-title mb-3">{props.title}</div>
-          <div>
-            <ModalForm />
+          <div className=" d-flex justify-content-between">
+            <span > {props.modal}</span>
+            <span> {props.editSkill}</span>
           </div>
         </div>
         <div className="text-size">{props.content}</div>
@@ -18,4 +20,4 @@ const CardProfile = (props) => {
   );
 };
 
-export default CardProfile;
+export default AboutCard;
