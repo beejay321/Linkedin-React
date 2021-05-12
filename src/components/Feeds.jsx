@@ -9,7 +9,7 @@ class Feeds extends React.Component {
     user: {},
     userExperiences: [],
   };
-  
+
   componentDidMount = async () => {
     try {
       const response = await fetch(
@@ -29,8 +29,6 @@ class Feeds extends React.Component {
     } catch (error) {
       console.log(error);
     }
-
-
   };
 
   render() {

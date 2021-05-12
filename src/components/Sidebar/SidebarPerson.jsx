@@ -11,7 +11,7 @@ function SidebarPerson(props) {
         </Col>
         <Col xs={9} className="align-text-bottom">
           <span className="sidebar-person-name">
-            {props.name} {props.surname}
+            {props.username} {props.surname}
           </span>
           <span className="sidebar-span text-muted">{" \u2022 "}</span>
           <span className="sidebar-span text-muted">2nd</span>
