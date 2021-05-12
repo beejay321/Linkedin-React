@@ -14,9 +14,9 @@ class App extends React.Component {
     return (
       <Router>
         <MyNav />
+       
         <Route
-          render={(routerProps) => <Feeds {...routerProps} />}
-          path="/"
+          component={Feeds} path="/"
           exact
         />
 

@@ -9,8 +9,11 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import { useState } from "react";
+import "../CardProfile.css";
 
-function SkillsModal() {
+
+
+const AddPostModal = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -18,30 +21,40 @@ function SkillsModal() {
 
   return (
     <>
-      <Button variant="light" onClick={handleShow}>
-        Add New Skill
+      <Button
+        onClick={handleShow}
+        id="postbutton"
+        variant="secondary"
+        size="md"
+        block
+      >
+        Start a Post
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Skills</Modal.Title>
+          <Modal.Title>Create a post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group>
-            <Form.Label className="text-muted">Top Skills</Form.Label>
             <Form.Control
+              id="text"
+              // value={props.text}
+              onChange={props.handleChange}
               as="textarea"
-              rows={1}
-              placeholder=" Skill ( ex: Data Analysis)"
+              rows={3}
+              placeholder="What do you want to talk about?"
             />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary">Add</Button>
+          <Button onClick={props.submitPost} type="submit" variant="primary">
+            Post
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
 
-export default SkillsModal;
+export default AddPostModal;
