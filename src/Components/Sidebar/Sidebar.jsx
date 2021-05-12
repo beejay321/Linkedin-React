@@ -1,26 +1,25 @@
-import "./Sidebar.css";
-import { Accordion, Card, Button, ListGroup } from "react-bootstrap";
-import SidebarPerson from "./SidebarPerson.jsx";
-import { useState, useEffect } from "react";
+import "./Sidebar.css"
+import { Accordion, Card, Button, ListGroup } from "react-bootstrap"
+import SidebarPerson from "./SidebarPerson.jsx"
+import { useState, useEffect } from "react"
 
 const auth =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTNmYjYxOWU1ZDAwMTUxZjhmODUiLCJpYXQiOjE2MjA2NDQ4NTksImV4cCI6MTYyMTg1NDQ1OX0.fm075zxqUowsPdcnZmh_76d_SkR-rUgg6MQK86gOvm0";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTNmYjYxOWU1ZDAwMTUxZjhmODUiLCJpYXQiOjE2MjA2NDQ4NTksImV4cCI6MTYyMTg1NDQ1OX0.fm075zxqUowsPdcnZmh_76d_SkR-rUgg6MQK86gOvm0"
 
 async function getAllProfiles(auth) {
-  const url = "https://striveschool-api.herokuapp.com/api/profile/";
-  const response = await fetch(url, { headers: { Authorization: auth } });
-  const data = await response.json();
+  const url = "https://striveschool-api.herokuapp.com/api/profile/"
+  const response = await fetch(url, { headers: { Authorization: auth } })
+  const data = await response.json()
   if (response.ok) {
-    return data;
+    return data
   }
 }
 
 export default function Sidebar() {
-  const [profilesData, updateProfilesData] = useState([]);
+  const [profilesData, updateProfilesData] = useState([])
   useEffect(async () => {
-    updateProfilesData(await getAllProfiles(auth));
-  }, []);
-  console.log("profilesData", profilesData);
+    updateProfilesData(await getAllProfiles(auth))
+  }, [])
   function mapProfiles(limit) {
     return profilesData.slice(limit, randomInteger(95, 101)).map((profile) => {
       return (
@@ -32,8 +31,8 @@ export default function Sidebar() {
           surname={profile.surname}
           title={profile.title}
         />
-      );
-    });
+      )
+    })
   }
   function mapProfileShowMore(limit) {
     return profilesData.slice(limit, randomInteger(55, 62)).map((profile) => {
@@ -46,11 +45,11 @@ export default function Sidebar() {
           surname={profile.surname}
           title={profile.title}
         />
-      );
-    });
+      )
+    })
   }
   function randomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min
   }
   return (
     <Card className="sidebar">
@@ -75,7 +74,7 @@ export default function Sidebar() {
         </Accordion>
       </div>
     </Card>
-  );
+  )
 }
 
 // Your access token for Token Based Authentication is:
