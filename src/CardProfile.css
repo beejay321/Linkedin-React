@@ -5,3 +5,15 @@
 .text-size {
   font-size: 13px;
 }
+#postbutton {
+  border: solid 1px white;
+  border-radius: 20px;
+  width: 50rem;
+  margin-left: 20px;
+}
+
+/* .badge {
+  border: solid white;
+  border-radius: 20px;
+  color : white
+} */
