@@ -11,13 +11,14 @@
 .sidebar-btn:hover {
   color: #fff !important;
 }
-
 #sidebar-heading {
   font-size: 1em;
 }
 
-.list-group {
+.sidebar {
+  overflow: hidden;
   border-radius: 10px !important;
+  margin-top: 50px;
 }
 
 .list-group-item span:nth-child(1) {
@@ -34,10 +35,21 @@
   margin-bottom: 5px;
 }
 
-.col-3 {
-  /* border: 2px blue solid; */
+.card-header button {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
 }
-.col-9 {
-  /* border: blueviolet solid 2px; */
-  padding-left: 0 !important;
+.card-header button:hover {
+  text-decoration: none;
+  color: rgb(122, 122, 122);
+}
+
+#sidebar-showmore {
+  border-bottom: none;
+  border-top: 1px solid rgb(200, 200, 200);
+}
+
+#more {
+  display: none;
 }

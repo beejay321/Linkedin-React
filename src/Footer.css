@@ -18,6 +18,6 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-/* .footer-flex .bi {
-margin-right: 50px
-} */
+ul {
+  padding-left: 0rem !important;
+}

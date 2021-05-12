@@ -1,5 +1,5 @@
 import "./Sidebar.css"
-import { Accordion, Card, Button } from "react-bootstrap"
+import { Accordion, Card, Button, ListGroup } from "react-bootstrap"
 import SidebarPerson from "./SidebarPerson.jsx"
 import { useState, useEffect } from "react"
 
@@ -21,7 +21,7 @@ export default function Sidebar() {
     updateProfilesData(await getAllProfiles(auth))
   }, [])
   function mapProfiles(limit) {
-    return profilesData.slice(-20, limit).map((profile) => {
+    return profilesData.slice(limit, randomInteger(95, 101)).map((profile) => {
       return (
         <SidebarPerson
           key={profile._id}
@@ -34,23 +34,46 @@ export default function Sidebar() {
       )
     })
   }
+  function mapProfileShowMore(limit) {
+    return profilesData.slice(limit, randomInteger(55, 62)).map((profile) => {
+      return (
+        <SidebarPerson
+          key={profile._id}
+          id={profile._id}
+          image={profile.image}
+          name={profile.name}
+          surname={profile.surname}
+          title={profile.title}
+        />
+      )
+    })
+  }
+  function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
   return (
-    <div className="p-3 my-2 border bg-white round-border">
-      <h5 className="mt-2 text-left">People also viewed</h5>
+    <Card className="sidebar">
+      <Card.Header className="bg-white border-0">
+        <h5 className="mt-2 text-left">People also viewed</h5>
+      </Card.Header>
       <div className="d-flex flex-column my-4">
-        {mapProfiles(80)}
+        <Card.Body>{mapProfiles(randomInteger(91, 94))}</Card.Body>
         <Accordion defaultActiveKey="0">
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+          <Accordion.Collapse eventKey="1">
+            <Card.Body> {mapProfileShowMore(randomInteger(45, 49))}</Card.Body>
+          </Accordion.Collapse>
+          <Card.Header
+            onclick="myFunction()"
+            id="sidebar-showmore"
+            className="p-0 m-0 full-width text-center bg-white"
+          >
+            <Accordion.Toggle as={Button} variant="link" eventKey="1">
               Show More
             </Accordion.Toggle>
           </Card.Header>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body> {mapProfiles(90)}</Card.Body>
-          </Accordion.Collapse>
         </Accordion>
       </div>
-    </div>
+    </Card>
   )
 }
 

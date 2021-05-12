@@ -9,6 +9,13 @@ import EducationContent from "./EducationContent"
 import SkillsContent from "./SkillsContent"
 import AccomplishmentsContent from "./AccomplishmentsContent"
 import InterestsContent from "./InterestsContent"
+import Example from "./MyModal"
+import ModalForm from "./MyModal"
+import AboutModal from "./AboutModal"
+import SkillsModal from "./SkillsModal"
+import SkillsEditModal from "./SkillsEditModal"
+import AboutCard from "./AboutCard"
+import EducationCard from "./EducationCard"
 
 class Home extends React.Component {
   state = {
@@ -63,9 +70,9 @@ class Home extends React.Component {
     return (
       <Container>
         <Row>
-          <Col xs={{ offset: 1, span: 10 }}>
+          <Col>
             <Row>
-              <Col xs={8}>
+              <Col xs={8} className="mt-5">
                 <JumboProfile
                   name={this.state.user.name}
                   surname={this.state.user.surname}
@@ -73,10 +80,10 @@ class Home extends React.Component {
                   area={this.state.user.area}
                   image={this.state.user.image}
                 />
-                <CardProfile
-                  user={this.state.user._id}
+                <AboutCard
                   title="About"
                   content={<About bio={this.state.user.bio} />}
+                  modal={<AboutModal />}
                 />
                 <CardProfile
                   title="Experience"
@@ -86,16 +93,17 @@ class Home extends React.Component {
                       experiences={this.state.userExperiences}
                     />
                   }
+                  // modal={<ModalForm />}
                 />
-                <CardProfile
-                  user={this.state.user._id}
+                <EducationCard
                   title="Education"
                   content={<EducationContent />}
                 />
-                <CardProfile
-                  user={this.state.user._id}
+                <AboutCard
                   title={"Skills & Endorsements"}
                   content={<SkillsContent />}
+                  modal={<SkillsModal />}
+                  editSkill={<SkillsEditModal />}
                 />
                 <CardProfile
                   user={this.state.user._id}
