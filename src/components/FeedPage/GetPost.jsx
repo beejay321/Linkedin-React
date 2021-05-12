@@ -1,8 +1,9 @@
 import react from "react";
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import "./Post.css";
 import PostCard from "./PostCard.jsx";
 import { useState, useEffect } from "react";
+
 const auth =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTNmYjYxOWU1ZDAwMTUxZjhmODUiLCJpYXQiOjE2MjA2NDQ4NTksImV4cCI6MTYyMTg1NDQ1OX0.fm075zxqUowsPdcnZmh_76d_SkR-rUgg6MQK86gOvm0";
 async function getAllPosts(auth) {
@@ -41,9 +42,9 @@ export default function GetPost() {
   }
 
   return (
-    <Card>
+    <Container>
       <Card.Header>Posts</Card.Header>
       <Card.Body>{mapPosts(5)}</Card.Body>
-    </Card>
+    </Container>
   );
 }

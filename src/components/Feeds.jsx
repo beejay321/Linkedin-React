@@ -2,6 +2,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "../CardProfile.css";
 import ModalForm from "./MyModal";
 import GetPost from "./FeedPage/GetPost";
+import "./FeedPage/Post.css";
 const Feeds = (props) => {
   return (
     <>
