@@ -1,7 +1,7 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "../CardProfile.css";
 import AddPost from "./AddPost";
-import GetPost from "./AddPost";
+import GetPost from "./FeedPage/GetPost";
 import React from "react";
 
 class Feeds extends React.Component {
@@ -40,7 +40,7 @@ class Feeds extends React.Component {
             <Col xs={3}>{/* <h1>first column</h1> */}</Col>
             <Col xs={6}>
               <AddPost image={this.state.user.image} />
-              {/* <GetPost /> */}
+              <GetPost />
             </Col>
             <Col xs={3}>{/* <h1>third column</h1> */}</Col>
           </Row>
