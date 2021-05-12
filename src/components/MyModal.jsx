@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Modal,
   Button,
@@ -7,14 +7,14 @@ import {
   Col,
   Row,
   InputGroup,
-} from "react-bootstrap"
-import { useState } from "react"
+} from "react-bootstrap";
+import { useState } from "react";
 
 function ModalShow() {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -39,15 +39,15 @@ function ModalShow() {
         </Modal.Footer>
       </Modal>
     </>
-  )
+  );
 }
 
 class ModalForm extends React.Component {
-  state = {}
+  state = {};
 
   render() {
-    return <ModalShow />
+    return <ModalShow />;
   }
 }
 
-export default ModalForm
+export default ModalForm;

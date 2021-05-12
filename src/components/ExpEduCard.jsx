@@ -1,5 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import "../ExpEduCard.css";
+import EditExperience from "./EditExperience";
+import ModalForm from "./MyModal";
 
 const ExpEduCard = (props) => {
   return (
@@ -22,7 +24,7 @@ const ExpEduCard = (props) => {
         {props.description}
       </Col>
       <Col xs={1}>
-        <i class="bi bi-pencil fs-7"></i>
+        <EditExperience />
       </Col>
     </Row>
   );

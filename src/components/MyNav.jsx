@@ -39,7 +39,7 @@ class MyNav extends React.Component {
             <Nav className="ml-5">
               <Navbar.Brand href="#home">
                 <h1>
-                  <i className="bi bi-linkedin fs-1 mb-3 "></i>
+                  <i className="bi bi-linkedin fs-1  "></i>
                 </h1>
               </Navbar.Brand>
 
@@ -47,7 +47,7 @@ class MyNav extends React.Component {
                 <InputGroup>
                   <InputGroup.Prepend>
                     <InputGroup.Text>
-                      <i class="bi bi-search"></i>
+                      <i id="search-icon" class="bi bi-search"></i>
                     </InputGroup.Text>
                   </InputGroup.Prepend>
                   <FormControl
@@ -60,28 +60,28 @@ class MyNav extends React.Component {
             </Nav>
 
             <Nav className="mr-auto">
-              <Nav.Link href="#home">
+              <Nav.Link>
                 <i className="bi bi-house-door-fill"></i>
                 <span>Home</span>
               </Nav.Link>
-              <Nav.Link href="#mynetwork">
+              <Nav.Link>
                 {" "}
                 <i className="bi bi-people-fill"></i>
                 <span>My Network</span>
               </Nav.Link>
-              <Nav.Link href="#jobs">
+              <Nav.Link>
                 <i className="bi bi-briefcase-fill"></i> <span>Jobs</span>
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link>
                 {" "}
                 <i className="bi bi-chat-dots-fill"></i>
                 <span>Messaging</span>
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link>
                 <i className="bi bi-bell-fill"></i>
                 <span>Notifications</span>
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link>
                 <i className="bi bi-person-circle"></i>{" "}
                 <span>
                   {" "}
