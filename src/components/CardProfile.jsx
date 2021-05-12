@@ -12,7 +12,6 @@ class CardProfile extends React.Component {
     e.preventDefault()
     console.log("ciaociao")
     try {
-      console.log("user", this.props.user, "experience", this.state.experience)
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${this.props.user}/experiences`,
         {
