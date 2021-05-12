@@ -25,7 +25,7 @@ export default function GetPost() {
 
   function mapPosts(amount) {
     // const postLength = postData.length;
-    return postData.slice(-7).map((post) => {
+    return postData.slice(-8).map((post) => {
       return (
         <PostCard
           id={post._id}
@@ -41,5 +41,5 @@ export default function GetPost() {
     });
   }
 
-  return <div>{mapPosts()}</div>;
+  return <div>{mapPosts().reverse()}</div>;
 }
