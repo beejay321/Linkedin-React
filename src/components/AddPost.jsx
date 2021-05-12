@@ -65,18 +65,47 @@ class AddPost extends React.Component {
             />
           </Card.Body>
           <Card.Body className="d-flex justify-content-between">
-            <Button variant="secondary" size="md">
-              <span class="badge badge-dark">Photo</span>
-            </Button>{" "}
-            <Button variant="secondary" size="md">
-              <span class="badge badge-light">Video</span>
-            </Button>{" "}
-            <Button variant="secondary" size="md">
-              <span class="badge badge-light">Event</span>
-            </Button>{" "}
-            <Button variant="secondary" size="md">
-              <span class="badge badge-light">Write article</span>
-            </Button>{" "}
+            <div
+              className="addpostfooterbtn text-muted "
+              variant="outline"
+              size="md"
+            >
+              <span>
+                {" "}
+                <i className="addposticons bi bi-card-image"></i>
+              </span>
+              <span className="addposticons mt-2">Photo</span>
+            </div>{" "}
+            <div
+              className="addpostfooterbtn text-muted "
+              variant="outline"
+              size="md"
+            >
+              <span>
+                <i className="addposticons bi bi-camera-video-fill"></i>
+              </span>
+              <span className="addposticons mt-2 ">Video</span>
+            </div>{" "}
+            <div
+              className=" d-flex justify-content-between addpostfooterbtn text-muted "
+              variant="outline"
+              size="md"
+            >
+              <span>
+                <i className="addposticons  bi bi-calendar-event"></i>
+              </span>
+              <span className="addposticons mt-2 ">Event</span>
+            </div>{" "}
+            <div
+              className="addpostfooterbtn text-muted "
+              variant="outline"
+              size="md"
+            >
+              <span>
+                <i className="addposticons bi bi-blockquote-right"></i>
+              </span>
+              <span className="addposticons mt-2 ">Write article</span>{" "}
+            </div>{" "}
           </Card.Body>
         </Card>
       </>

@@ -6,10 +6,11 @@
   font-size: 13px;
 }
 #postbutton {
-  border: solid 1px white;
+  border: solid 1px rgb(139, 139, 139);
   border-radius: 20px;
   width: 50rem;
   margin-left: 20px;
+  /* background-color: none; */
 }
 
 /* .badge {
@@ -17,3 +18,13 @@
   border-radius: 20px;
   color : white
 } */
+
+#addpostfooterbtn {
+  border: solid 1px rgb(139, 139, 139);
+}
+#addposticons {
+  display: flex;
+  margin-right: 50px;
+  padding-right: 50px;
+  align-content: space-around;
+}

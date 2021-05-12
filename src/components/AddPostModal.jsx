@@ -11,8 +11,6 @@ import {
 import { useState } from "react";
 import "../CardProfile.css";
 
-
-
 const AddPostModal = (props) => {
   const [show, setShow] = useState(false);
 
@@ -24,9 +22,9 @@ const AddPostModal = (props) => {
       <Button
         onClick={handleShow}
         id="postbutton"
-        variant="secondary"
+        variant="outline"
         size="md"
-        block
+        className="text-muted "
       >
         Start a Post
       </Button>
