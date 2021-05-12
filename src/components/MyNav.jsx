@@ -60,12 +60,11 @@ class MyNav extends React.Component {
             </Nav>
 
             <Nav className="mr-auto">
-              <Link to="/">
-                <Nav.Link>
-                  <i className="bi bi-house-door-fill"></i>
-                  <span>Home</span>
-                </Nav.Link>
-              </Link>
+              <Nav.Link onClick={() => this.props.history.push("/")}>
+                <i className="bi bi-house-door-fill"></i>
+                <span>Home</span>
+              </Nav.Link>
+
               <Nav.Link>
                 {" "}
                 <i className="bi bi-people-fill"></i>
@@ -83,15 +82,15 @@ class MyNav extends React.Component {
                 <i className="bi bi-bell-fill"></i>
                 <span>Notifications</span>
               </Nav.Link>
-              <Link to="/:id">
-                <Nav.Link>
-                  <i className="bi bi-person-circle"></i>{" "}
-                  <span>
-                    {" "}
-                    Me <i id="caretdown" class="bi bi-caret-down-fill"></i>
-                  </span>
-                </Nav.Link>
-              </Link>
+
+              <Nav.Link onClick={() => this.props.history.push("/me")}>
+                <i className="bi bi-person-circle"></i>{" "}
+                <span>
+                  {" "}
+                  Me <i id="caretdown" class="bi bi-caret-down-fill"></i>
+                </span>
+              </Nav.Link>
+
               <Nav.Link id="work-icon">
                 <i className="bi bi-grid-3x3-gap-fill"></i>{" "}
                 <span>
