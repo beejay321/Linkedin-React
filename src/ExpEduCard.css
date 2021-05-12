@@ -14,7 +14,6 @@
 
 #exp-pencil {
   opacity: 0;
-  
 }
 
 #exp-pencil:hover {
@@ -23,4 +22,12 @@
   transition: 0.2s;
   transition-timing-function: ease-out;
   transition: 0.25s;
+}
+
+.edit-icon:hover {
+  opacity: 1;
+}
+
+.edit-icon {
+  opacity: 0.1;
 }

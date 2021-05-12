@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap"
 import { useState } from "react"
 
-function ModalShow(props) {
+export default function ModalShow(props) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
@@ -19,16 +19,21 @@ function ModalShow(props) {
   return (
     <>
       <div onClick={handleShow}>
-        {" "}
-        <i class="bi bi-plus fs-3"></i>{" "}
+        {props.formType === "edit" ? (
+          <i class="bi bi-pencil fs-5"></i>
+        ) : (
+          <i class="bi bi-plus fs-3"></i>
+        )}
       </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Experience</Modal.Title>
+          <Modal.Title>
+            {props.formType === "edit" ? "Edit Experience" : "Add Experience"}
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={props.handleSubmit}>
+        <Form onSubmit={props.handleSubmit}>
+          <Modal.Body>
             <Form.Group>
               <Form.Label>Role</Form.Label>
               <Form.Control
@@ -53,7 +58,7 @@ function ModalShow(props) {
               <Form.Label>Start date</Form.Label>
               <Form.Control
                 id="startDate"
-                type="text"
+                type="datetime-local"
                 placeholder="Start date..."
                 value={props.startDate}
                 onChange={props.handleChange}
@@ -79,29 +84,25 @@ function ModalShow(props) {
                 onChange={props.handleChange}
               />
             </Form.Group>
+          </Modal.Body>
+          <Modal.Footer>
             <Button
               as="input"
               type="submit"
               value="Submit"
               variant="outline-primary"
+              onClick={handleClose}
             />
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary">Delete</Button>
-          <Button variant="primary">Save Changes</Button>
-        </Modal.Footer>
+            <Button
+              as="input"
+              type="button"
+              value="Delete"
+              variant="outline-primary"
+              onClick={props.handleDelete}
+            />
+          </Modal.Footer>
+        </Form>
       </Modal>
     </>
   )
 }
-
-class ModalForm extends React.Component {
-  state = {}
-
-  render() {
-    return <ModalShow />
-  }
-}
-
-export default ModalForm
