@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 // import { Modal } from "react-responsive-modal";
 import {
   Modal,
@@ -8,25 +8,24 @@ import {
   Col,
   Row,
   InputGroup,
-} from "react-bootstrap";
-import "react-responsive-modal/styles.css";
+} from "react-bootstrap"
 
 class ModalInClassComponents extends Component {
   state = {
     post: "",
     show: false,
-  };
+  }
   onClickButton = (e) => {
-    e.preventDefault();
-    this.setState({ openModal: true });
-  };
+    e.preventDefault()
+    this.setState({ openModal: true })
+  }
   onCloseModal = () => {
-    this.setState({ openModal: false });
-  };
+    this.setState({ openModal: false })
+  }
 
   uploadImage = async (e) => {
-    e.preventDefault();
-    let formData = new FormData();
+    e.preventDefault()
+    let formData = new FormData()
     // formData.append("file", myFileInput.files[0]);
 
     try {
@@ -41,20 +40,20 @@ class ModalInClassComponents extends Component {
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDliYzRmMDkwNTY0YTAwMTU4OGU3M2YiLCJpYXQiOjE2MjA4MjEyMzMsImV4cCI6MTYyMjAzMDgzM30.SbwSggBFs6g6jZgb3C710s3gG93tcV5Fupko2NkKc-w",
           },
         }
-      );
+      )
 
       if (response.ok) {
-        alert("your image has been saved");
+        alert("your image has been saved")
         this.setState({
           text: "",
-        });
+        })
       } else {
-        alert("something went wrong");
+        alert("something went wrong")
       }
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
 
   render() {
     return (
@@ -108,8 +107,8 @@ class ModalInClassComponents extends Component {
           </Modal.Footer>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default ModalInClassComponents;
+export default ModalInClassComponents

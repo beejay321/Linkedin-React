@@ -67,6 +67,7 @@ class Home extends React.Component {
             <Row>
               <Col xs={8} className="mt-5">
                 <JumboProfile
+                  userId={this.state.user._id}
                   name={this.state.user.name}
                   surname={this.state.user.surname}
                   title={this.state.user.title}

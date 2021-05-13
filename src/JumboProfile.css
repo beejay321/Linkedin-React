@@ -17,3 +17,14 @@
 .location-line {
   font-size: 13px;
 }
+
+.addPic {
+  position: absolute;
+  left: 9rem;
+  opacity: 0.1;
+}
+
+.addPic:hover {
+  opacity: 1;
+  cursor: pointer;
+}
