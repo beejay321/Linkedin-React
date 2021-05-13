@@ -1,17 +1,18 @@
-import { Card, Image, Form, Button, Badge } from "react-bootstrap";
+import { Card, Image, Form, Button, Row, Col } from "react-bootstrap";
 import "../CardProfile.css";
 import AddPostModal from "./AddPostModal";
+import MediaModal from "./MediaModal";
 import ModalForm from "./MyModal";
 import React from "react";
 
 class AddPost extends React.Component {
   state = {
     text: "",
+    post: "",
   };
   submitPost = async (e) => {
     // let's prevent the default browser behavior
     e.preventDefault();
-    console.log(this.state.reservation);
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/posts/",
@@ -64,48 +65,54 @@ class AddPost extends React.Component {
               text={this.state.text}
             />
           </Card.Body>
-          <Card.Body className="d-flex justify-content-between">
-            <div
-              className="addpostfooterbtn text-muted "
-              variant="outline"
-              size="md"
-            >
-              <span>
-                {" "}
-                <i className="addposticons bi bi-card-image"></i>
-              </span>
-              <span className="addposticons mt-2">Photo</span>
-            </div>{" "}
-            <div
-              className="addpostfooterbtn text-muted "
-              variant="outline"
-              size="md"
-            >
-              <span>
-                <i className="addposticons bi bi-camera-video-fill"></i>
-              </span>
-              <span className="addposticons mt-2 ">Video</span>
-            </div>{" "}
-            <div
-              className=" d-flex justify-content-between addpostfooterbtn text-muted "
-              variant="outline"
-              size="md"
-            >
-              <span>
-                <i className="addposticons  bi bi-calendar-event"></i>
-              </span>
-              <span className="addposticons mt-2 ">Event</span>
-            </div>{" "}
-            <div
-              className="addpostfooterbtn text-muted "
-              variant="outline"
-              size="md"
-            >
-              <span>
-                <i className="addposticons bi bi-blockquote-right"></i>
-              </span>
-              <span className="addposticons mt-2 ">Write article</span>{" "}
-            </div>{" "}
+          <Card.Body>
+            <div className="addpostfooterbtn-section d-flex justify-content-between ">
+              {/* <MediaModal submitPost={this.props.submitPost} /> */}
+
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-card-image"></i>
+                  </Col>
+                  <Col className=" addposttext">
+                    <span> Photo</span>
+                  </Col>
+                </Row>
+              </Button>
+
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-camera-video-fill"></i>
+                  </Col>
+                  <Col className=" addposttext">
+                    <span> Video</span>
+                  </Col>
+                </Row>
+              </Button>
+
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-calendar-event"></i>
+                  </Col>
+                  <Col className=" addposttext">
+                    <span> Event</span>
+                  </Col>
+                </Row>
+              </Button>
+
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-blockquote-right"></i>
+                  </Col>
+                  <Col className=" addposttext">
+                    <span> Article</span>
+                  </Col>
+                </Row>
+              </Button>
+            </div>
           </Card.Body>
         </Card>
       </>

@@ -13,6 +13,8 @@ import {
   Dropdown,
 } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import MediaModal from "../MediaModal";
+
 function PostCard(props) {
   return (
     <Accordion defaultActiveKey="0">
@@ -101,6 +103,8 @@ function PostCard(props) {
                     aria-label="Text input with checkbox"
                     placeholder="Add a comment..."
                   />
+                  <MediaModal id = {props.id} />
+
                   <Button
                     className="getPost-commentSend-btn mx-1"
                     type="submit"
