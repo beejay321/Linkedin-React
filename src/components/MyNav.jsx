@@ -8,11 +8,11 @@ import {
   Navbar,
   Nav,
   NavDropdown,
-} from "react-bootstrap";
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import "../Nav.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
+} from "react-bootstrap"
+import React from "react"
+import { Link, withRouter } from "react-router-dom"
+import "../Nav.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
 
 class MyNav extends React.Component {
   render() {
@@ -43,7 +43,12 @@ class MyNav extends React.Component {
                 </h1>
               </Navbar.Brand>
 
-              <Form className="mt-2">
+              <Form
+                className="mt-2"
+                onSubmit={() =>
+                  this.props.history.push(`/search/${this.props.query}`)
+                }
+              >
                 <InputGroup>
                   <InputGroup.Prepend>
                     <InputGroup.Text>
@@ -51,6 +56,9 @@ class MyNav extends React.Component {
                     </InputGroup.Text>
                   </InputGroup.Prepend>
                   <FormControl
+                    id="query"
+                    value={this.props.query}
+                    onChange={this.props.handleChange}
                     type="text"
                     placeholder="Search"
                     className="mr-sm-2"
@@ -83,7 +91,7 @@ class MyNav extends React.Component {
                 <span>Notifications</span>
               </Nav.Link>
 
-              <Nav.Link onClick={() => this.props.history.push("/me")}>
+              <Nav.Link onClick={() => this.props.history.push("/user/me")}>
                 <i className="bi bi-person-circle"></i>{" "}
                 <span>
                   {" "}
@@ -121,8 +129,8 @@ class MyNav extends React.Component {
           </Container>
         </Navbar>
       </>
-    );
+    )
   }
 }
 
-export default withRouter(MyNav);
+export default withRouter(MyNav)

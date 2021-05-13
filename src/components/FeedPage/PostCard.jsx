@@ -52,11 +52,11 @@ function PostCard(props) {
             </Col>
           </Row>
         </Card.Header>
-        <Card.Body className="pt-0">
+        <Card.Body className="py-0">
           <p>{props.text}</p>
-          <hr className="text-muted" />
+          <hr className="text-muted m-0 p-0" />
           <Accordion.Toggle as={Button} variant="link" eventKey="1">
-            <Col className="getPost-comment-section ">
+            <Col className="getPost-comment-section">
               <Button className="getPost-like-btn mx-1">
                 <Row>
                   <span>
@@ -68,7 +68,7 @@ function PostCard(props) {
               <Button className="getPost-comment-btn mx-1">
                 <Row>
                   <span>
-                    <i class="bi bi-input-cursor-text"></i> Comment
+                    <i class="bi bi-chat-right-dots"></i> Comment
                   </span>
                 </Row>
               </Button>
