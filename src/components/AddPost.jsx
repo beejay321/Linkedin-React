@@ -29,8 +29,11 @@ class AddPost extends React.Component {
 
       if (response.ok) {
         alert("your post was successful");
+        const post = await response.json();
+        console.log(post._id);
         this.setState({
           text: "",
+          post: post._id,
         });
       } else {
         alert("something went wrong");
@@ -48,7 +51,7 @@ class AddPost extends React.Component {
   };
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
 
     return (
       <>
@@ -63,6 +66,7 @@ class AddPost extends React.Component {
               handleChange={this.handleChange}
               submitPost={this.submitPost}
               text={this.state.text}
+              id={this.state.post}
             />
           </Card.Body>
           <Card.Body>
@@ -72,10 +76,10 @@ class AddPost extends React.Component {
               {/* <Button className="addpostfooterbtn mx-1">
                 <Row>
                   <Col> */}
-                  <MediaModal id={this.props.id} />
+              <MediaModal id={this.state.post} />
 
-                    {/* <i className="bi bi-card-image"></i> */}
-                  {/* </Col>
+              {/* <i className="bi bi-card-image"></i> */}
+              {/* </Col>
                   <Col className=" addposttext">
                     <span> Photo</span>
                   </Col>

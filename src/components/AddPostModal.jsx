@@ -51,7 +51,7 @@ const AddPostModal = (props) => {
             <Button className="addpostfooterbtn mx-1">
               <Row>
                 <Col>
-                  <MediaModal submitPost={props.submitPost} />
+                  <MediaModal id={props.id} />
                 </Col>
               </Row>
             </Button>
