@@ -10,8 +10,7 @@ import {
 } from "react-bootstrap";
 import { useState } from "react";
 import "../CardProfile.css";
-
-
+import MediaModal from "./MediaModal";
 
 const AddPostModal = (props) => {
   const [show, setShow] = useState(false);
@@ -24,9 +23,9 @@ const AddPostModal = (props) => {
       <Button
         onClick={handleShow}
         id="postbutton"
-        variant="secondary"
+        variant="outline"
         size="md"
-        block
+        className="text-muted "
       >
         Start a Post
       </Button>
@@ -47,11 +46,46 @@ const AddPostModal = (props) => {
             />
           </Form.Group>
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.submitPost} type="submit" variant="primary">
-            Post
-          </Button>
-        </Modal.Footer>
+        <Modal.Body className="d-flex justify-content-between ">
+          <div className="addpostfooterbtn-section d-flex justify-content-between ">
+            <Button className="addpostfooterbtn mx-1">
+              <Row>
+                <Col>
+                  <MediaModal submitPost={props.submitPost} />
+                </Col>
+              </Row>
+            </Button>
+
+            <Button className="addpostfooterbtn mx-1">
+              <Row>
+                <Col>
+                  <i className="bi bi-camera-video-fill"></i>
+                </Col>
+              </Row>
+            </Button>
+
+            <Button className="addpostfooterbtn mx-1">
+              <Row>
+                <Col>
+                  <i className="bi bi-calendar-event"></i>
+                </Col>
+              </Row>
+            </Button>
+
+            <Button className="addpostfooterbtn mx-1">
+              <Row>
+                <Col>
+                  <i className="bi bi-blockquote-right"></i>
+                </Col>
+              </Row>
+            </Button>
+          </div>
+          <div>
+            <Button onClick={props.submitPost} type="submit" variant="primary">
+              Post
+            </Button>
+          </div>
+        </Modal.Body>
       </Modal>
     </>
   );
