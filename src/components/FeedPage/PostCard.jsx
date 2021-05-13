@@ -53,6 +53,7 @@ function PostCard(props) {
           </Row>
         </Card.Header>
         <Card.Body className="py-0">
+          <Image className="addpost-img" src={props.postimage} />
           <p>{props.text}</p>
           <hr className="text-muted m-0 p-0" />
           <Accordion.Toggle as={Button} variant="link" eventKey="1">
@@ -94,7 +95,7 @@ function PostCard(props) {
           <Accordion.Collapse eventKey="1">
             <Row className="mt-3">
               <Col xs={2}>
-                <Image className="getPost-comment-img" src={props.image} />
+                <Image className="getPost-comment-img" src={props.profile} />
               </Col>
               <Col xs={10} className="align-text-bottom">
                 <InputGroup className="mb-3">
@@ -103,14 +104,14 @@ function PostCard(props) {
                     aria-label="Text input with checkbox"
                     placeholder="Add a comment..."
                   />
-                  <MediaModal id = {props.id} />
+                  <MediaModal id={props.id} />
 
                   <Button
                     className="getPost-commentSend-btn mx-1"
                     type="submit"
                     disabled
                   >
-                    <i class="bi bi-reply"></i>
+                    <i className="bi bi-reply"></i>
                   </Button>
                 </InputGroup>
               </Col>

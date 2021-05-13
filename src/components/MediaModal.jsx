@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 // import { Modal } from "react-responsive-modal";
 import {
   Modal,
@@ -8,20 +8,20 @@ import {
   Col,
   Row,
   InputGroup,
-} from "react-bootstrap"
+} from "react-bootstrap";
 
 class MediaModal extends Component {
   state = {
     post: null,
     show: false,
-  }
+  };
   onClickButton = (e) => {
-    e.preventDefault()
-    this.setState({ openModal: true })
-  }
+    e.preventDefault();
+    this.setState({ openModal: true });
+  };
   onCloseModal = () => {
-    this.setState({ openModal: false })
-  }
+    this.setState({ openModal: false });
+  };
 
   fileSelectedHandler = (event) => {
     console.log(event.target.files[0]);
@@ -33,7 +33,7 @@ class MediaModal extends Component {
   uploadImage = async (e) => {
     e.preventDefault();
     let formData = new FormData();
-    formData.append("file", this.state.post);
+    formData.append("post", this.state.post);
     console.log(this.state.post);
     console.log(formData);
 
@@ -47,14 +47,14 @@ class MediaModal extends Component {
             // Content-Disposition: form-data; name="file"; filename="Chappellet_Vineyard_Sunset_in_Fall_42eaa7cf-a1f1-4f6b-a260-b6890a6762db-jpg.jpeg"
             // Content-Type: image/jpeg
 
-            "Content-Type": "multipart/form-data; boundary="boundary"",
+            // "Content-Type": "multipart/form-data; boundary=boundary",
             // "Content-Disposition": form-data; name="description",
 
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDliYzRmMDkwNTY0YTAwMTU4OGU3M2YiLCJpYXQiOjE2MjA4MjEyMzMsImV4cCI6MTYyMjAzMDgzM30.SbwSggBFs6g6jZgb3C710s3gG93tcV5Fupko2NkKc-w",
           },
         }
-      )
+      );
 
       if (response.ok) {
         alert("your image has been saved");
@@ -63,12 +63,12 @@ class MediaModal extends Component {
           post: "",
         });
       } else {
-        alert("something went wrong")
+        alert("something went wrong");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   render() {
     return (
@@ -84,9 +84,9 @@ class MediaModal extends Component {
             <Col>
               <i className="bi bi-card-image"></i>
             </Col>
-            {/* <Col className=" addposttext">
+            <Col className=" addposttext">
               <span> Photo</span>
-            </Col> */}
+            </Col>
           </Row>
         </Button>
 
@@ -127,8 +127,8 @@ class MediaModal extends Component {
           </Modal.Footer>
         </Modal>
       </div>
-    )
+    );
   }
 }
 
-export default MediaModal
+export default MediaModal;

@@ -69,16 +69,18 @@ class AddPost extends React.Component {
             <div className="addpostfooterbtn-section d-flex justify-content-between ">
               {/* <MediaModal submitPost={this.props.submitPost} /> */}
 
-              <Button className="addpostfooterbtn mx-1">
+              {/* <Button className="addpostfooterbtn mx-1">
                 <Row>
-                  <Col>
-                    <i className="bi bi-card-image"></i>
-                  </Col>
+                  <Col> */}
+                  <MediaModal id={this.props.id} />
+
+                    {/* <i className="bi bi-card-image"></i> */}
+                  {/* </Col>
                   <Col className=" addposttext">
                     <span> Photo</span>
                   </Col>
                 </Row>
-              </Button>
+              </Button> */}
 
               <Button className="addpostfooterbtn mx-1">
                 <Row>
