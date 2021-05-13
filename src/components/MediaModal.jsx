@@ -10,9 +10,9 @@ import {
   InputGroup,
 } from "react-bootstrap"
 
-class ModalInClassComponents extends Component {
+class MediaModal extends Component {
   state = {
-    post: "",
+    post: null,
     show: false,
   }
   onClickButton = (e) => {
@@ -23,10 +23,19 @@ class ModalInClassComponents extends Component {
     this.setState({ openModal: false })
   }
 
+  fileSelectedHandler = (event) => {
+    console.log(event.target.files[0]);
+    this.setState({
+      post: event.target.files[0],
+    });
+  };
+
   uploadImage = async (e) => {
-    e.preventDefault()
-    let formData = new FormData()
-    // formData.append("file", myFileInput.files[0]);
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("file", this.state.post);
+    console.log(this.state.post);
+    console.log(formData);
 
     try {
       let response = await fetch(
@@ -35,7 +44,12 @@ class ModalInClassComponents extends Component {
           method: "POST",
           body: formData,
           headers: {
-            "Content-Type": "application/json",
+            // Content-Disposition: form-data; name="file"; filename="Chappellet_Vineyard_Sunset_in_Fall_42eaa7cf-a1f1-4f6b-a260-b6890a6762db-jpg.jpeg"
+            // Content-Type: image/jpeg
+
+            "Content-Type": "multipart/form-data; boundary="boundary"",
+            // "Content-Disposition": form-data; name="description",
+
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDliYzRmMDkwNTY0YTAwMTU4OGU3M2YiLCJpYXQiOjE2MjA4MjEyMzMsImV4cCI6MTYyMjAzMDgzM30.SbwSggBFs6g6jZgb3C710s3gG93tcV5Fupko2NkKc-w",
           },
@@ -43,10 +57,11 @@ class ModalInClassComponents extends Component {
       )
 
       if (response.ok) {
-        alert("your image has been saved")
+        alert("your image has been saved");
+        console.log(response);
         this.setState({
-          text: "",
-        })
+          post: "",
+        });
       } else {
         alert("something went wrong")
       }
@@ -87,7 +102,12 @@ class ModalInClassComponents extends Component {
                 </Form.Group>
               </Form> */}
               <form enctype="multipart/form-data" method="post" name="fileinfo">
-                <input type="file" name="file" required />
+                <input
+                  type="file"
+                  name="file"
+                  onChange={this.fileSelectedHandler}
+                  required
+                />
               </form>
             </div>
           </Modal.Body>
@@ -111,4 +131,4 @@ class ModalInClassComponents extends Component {
   }
 }
 
-export default ModalInClassComponents
+export default MediaModal
