@@ -12,24 +12,14 @@
   margin-left: 20px;
   /* background-color: none; */
 }
-
-/* .badge {
-  border: solid white;
-  border-radius: 20px;
-  color : white
-} */
-
-/* .addpostfooterbtn-section {
+#savepostbtn {
   border: solid 1px rgb(139, 139, 139);
-  display: flex;
-  justify-content: space-between;
-} */
-/* #addposticons {
-  display: flex;
-  margin-right: 50px;
-  padding-right: 50px;
-  align-content: space-around;
-} */
+  border-radius: 20px;
+  margin-top: 10px;
+  width: 5rem;
+  margin-left: 20px;
+  /* background-color: none; */
+}
 
 .addpostfooterbtn-section button:nth-child(1n) {
   background: #fff;

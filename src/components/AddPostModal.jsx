@@ -107,11 +107,29 @@ class AddPostModal extends Component {
                 </Row>
               </Button>
             </div>
+
+            <div className="addpostfooterbtn-section d-flex justify-content-between ">
+            
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-chat-text"></i>
+                  </Col>
+                  <Col className=" addposttext">
+                    <span> Anyone</span>
+                  </Col>
+                </Row>
+              </Button>
+            </div>
+
             <div>
               <Button
                 onClick={this.props.submitPost}
                 type="submit"
-                variant="primary"
+                id="savepostbtn"
+                variant="outline"
+                size="md"
+                className="text-muted "
               >
                 Post
               </Button>

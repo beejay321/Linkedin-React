@@ -73,21 +73,28 @@ class MediaModal extends Component {
   render() {
     return (
       <div>
-        <Button
-          onClick={this.onClickButton}
-          // id="postbutton"
-          variant="outline"
-          size="md"
-          className="addpostfooterbtn mx-1 text-muted "
-        >
-          <Row>
-            <Col>
-              <i className="bi bi-card-image"></i>
-            </Col>
-            <Col className=" addposttext">
-              <span> Photo</span>
-            </Col>
-          </Row>
+        <Button className="addpostfooterbtn mx-1">
+          <div id="selectimages">
+            <form enctype="multipart/form-data" method="post" name="fileinfo">
+              <input
+                id="post-file"
+                type="file"
+                name="file"
+                onChange={this.props.selectImage}
+                required
+              />
+              <label for="post-file">
+                <Row>
+                  <Col>
+                    <i className="bi bi-card-image"></i>
+                  </Col>
+                  <Col className=" addposttext">
+                    <span> Photo</span>
+                  </Col>
+                </Row>
+              </label>
+            </form>
+          </div>
         </Button>
 
         <Modal show={this.state.openModal} onHide={this.onCloseModal}>
@@ -96,11 +103,6 @@ class MediaModal extends Component {
           </Modal.Header>
           <Modal.Body>
             <div id="selectimages">
-              {/* <Form>
-                <Form.Group>
-                  <Form.Control type="file" />
-                </Form.Group>
-              </Form> */}
               <form enctype="multipart/form-data" method="post" name="fileinfo">
                 <input
                   type="file"

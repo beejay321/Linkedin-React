@@ -37,17 +37,19 @@ class Feeds extends React.Component {
     return (
       <>
         <Container className="mt-5">
-          <Row>
-            <Col xs={3}>
-              {/* <h1>first column</h1> */}
-              <LeftColumnHomeFeed user={this.state.user} />
-            </Col>
-            <Col xs={6}>
-              <AddPost image={this.state.user.image} />
-              <GetPost image={this.state.user.image} />
-            </Col>
-            <Col xs={3}>{/* <RightColumnHomeFeed /> */}</Col>
-          </Row>
+          <Col xs={{ offset: 1, span: 10 }}>
+            <Row>
+              <Col xs={3}>
+                {/* <h1>first column</h1> */}
+                <LeftColumnHomeFeed user={this.state.user} />
+              </Col>
+              <Col xs={6}>
+                <AddPost image={this.state.user.image} />
+                <GetPost image={this.state.user.image} />
+              </Col>
+              <Col xs={3}>{/* <RightColumnHomeFeed /> */}</Col>
+            </Row>
+          </Col>
         </Container>
       </>
     );
