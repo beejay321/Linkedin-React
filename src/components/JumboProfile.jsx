@@ -8,7 +8,7 @@ const JumboProfile = (props) => {
       <div className="img-container"></div>
       <Card.Body>
         <img className="avatar" src={props.image} />
-        <ProfilePicModal userId={props.userId} />
+        {props.isMe === "me" && <ProfilePicModal userId={props.userId} />}
         <Card.Title className="mt-5">
           {props.name} {props.surname}
         </Card.Title>

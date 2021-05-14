@@ -48,17 +48,18 @@ class CardProfile extends React.Component {
           <div className=" d-flex justify-content-between">
             <div className="section-title mb-3">{this.props.title}</div>
             <div>
-              {this.props.title === "Experience" && (
-                <ModalForm
-                  handleSubmit={this.handleSubmit}
-                  handleChange={this.handleChange}
-                  role={this.state.experience.role}
-                  company={this.state.experience.company}
-                  startDate={this.state.experience.startDate}
-                  description={this.state.experience.description}
-                  area={this.state.experience.area}
-                />
-              )}
+              {this.props.title === "Experience" &&
+                this.props.isMe === "me" && (
+                  <ModalForm
+                    handleSubmit={this.handleSubmit}
+                    handleChange={this.handleChange}
+                    role={this.state.experience.role}
+                    company={this.state.experience.company}
+                    startDate={this.state.experience.startDate}
+                    description={this.state.experience.description}
+                    area={this.state.experience.area}
+                  />
+                )}
             </div>
           </div>
           <div className="text-size">{this.props.content}</div>
