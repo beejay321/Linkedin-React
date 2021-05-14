@@ -16,7 +16,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function PostCard(props) {
   return (
     <Accordion defaultActiveKey="0">
-      <Card className="mt-2 mb-3">
+      <Card className="mt-2 mb-2 getPost-card">
         <Card.Header className="bg-white border-0">
           <Row>
             <Col className="float-left" xs={2}>
@@ -35,16 +35,26 @@ function PostCard(props) {
             </Col>
             <Col className="float-right" xs={1}>
               <DropdownButton
+                className="getPost-dropDown-button rounded-circle"
                 as={InputGroup.Prepend}
                 variant="outline-none-secondary"
                 title={<i class="bi bi-three-dots"></i>}
                 id="input-group-dropdown-1"
               >
-                <Dropdown.Item href="#">Action</Dropdown.Item>
-                <Dropdown.Item href="#">Another action</Dropdown.Item>
-                <Dropdown.Item href="#">Something else here</Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item href="#">Separated link</Dropdown.Item>
+                <Dropdown.Item href="#">
+                  <i class="bi bi-bookmark"></i> Save
+                </Dropdown.Item>
+                <Dropdown.Item href="#">
+                  <i class="bi bi-link-45deg"></i> Copy Link action
+                </Dropdown.Item>
+                <Dropdown.Item href="#">
+                  <i class="bi bi-eye-slash"></i> I don't want to see this else
+                  here
+                </Dropdown.Item>
+
+                <Dropdown.Item href="#">
+                  <i class="bi bi-megaphone"></i> Report
+                </Dropdown.Item>
               </DropdownButton>
               <Button className="bg-white border-0"></Button>
             </Col>
@@ -52,9 +62,9 @@ function PostCard(props) {
         </Card.Header>
         <Card.Body className="py-0">
           <p>{props.text}</p>
-          <hr className="text-muted m-0 p-0" />
+          <hr className="text-muted my-0 py-0" />
           <Accordion.Toggle as={Button} variant="link" eventKey="1">
-            <Col className="getPost-comment-section">
+            <Col className="getPost-comment-section ">
               <Button className="getPost-like-btn mx-1">
                 <Row>
                   <span>
@@ -66,7 +76,7 @@ function PostCard(props) {
               <Button className="getPost-comment-btn mx-1">
                 <Row>
                   <span>
-                    <i class="bi bi-chat-right-dots"></i> Comment
+                    <i class="bi bi-input-cursor-text"></i> Comment
                   </span>
                 </Row>
               </Button>
