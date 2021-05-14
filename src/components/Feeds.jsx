@@ -44,7 +44,7 @@ class Feeds extends React.Component {
             </Col>
             <Col xs={6}>
               <AddPost image={this.state.user.image} />
-              <GetPost />
+              <GetPost image={this.state.user.image} />
             </Col>
             <Col xs={3}>{/* <RightColumnHomeFeed /> */}</Col>
           </Row>

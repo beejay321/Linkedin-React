@@ -16,7 +16,7 @@ async function getAllPosts(auth) {
   }
 }
 
-export default function GetPost() {
+export default function GetPost(props) {
   const [postData, updatePostData] = useState([]);
   useEffect(async () => {
     updatePostData(await getAllPosts(auth));
@@ -36,6 +36,8 @@ export default function GetPost() {
           lastname={post.user.surname}
           title={post.user.title}
           updatedDate={post.updatedAt}
+          postimage={post.image}
+          profile={props.image}
         />
       );
     });
