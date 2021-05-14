@@ -197,3 +197,20 @@ hr {
   padding-top: 0;
   padding-bottom: 0;
 }
+
+#follow-text {
+  font-size: 15px;
+  font-style: normal;
+}
+.RightColumn-card .bi-plus i {
+  font-weight: 500px;
+  color: red;
+  vertical-align: baseline;
+}
+#RightColumn-follow-btn {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  font-size: 16px;
+  justify-self: baseline;
+}
