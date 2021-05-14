@@ -34,9 +34,9 @@ class MyNav extends React.Component {
           </Container>
         </Navbar> */}
 
-        <Navbar bg="light" variant="white">
+        <Navbar bg="light" variant="white" className="nav-thin" fixed="top">
           <Container>
-            <Nav className="ml-5">
+            <Nav className="ml-5 down-scale">
               <Navbar.Brand href="#home">
                 <h1>
                   <i className="bi bi-linkedin fs-1  "></i>
@@ -67,7 +67,7 @@ class MyNav extends React.Component {
               </Form>
             </Nav>
 
-            <Nav className="mr-auto">
+            <Nav className="mr-auto down-scale">
               <Nav.Link onClick={() => this.props.history.push("/")}>
                 <i className="bi bi-house-door-fill"></i>
                 <span>Home</span>
@@ -76,7 +76,7 @@ class MyNav extends React.Component {
               <Nav.Link>
                 {" "}
                 <i className="bi bi-people-fill"></i>
-                <span>My Network</span>
+                <span>Network</span>
               </Nav.Link>
               <Nav.Link>
                 <i className="bi bi-briefcase-fill"></i> <span>Jobs</span>
@@ -92,19 +92,11 @@ class MyNav extends React.Component {
               </Nav.Link>
 
               <Nav.Link onClick={() => this.props.history.push("/user/me")}>
-                <i className="bi bi-person-circle"></i>{" "}
-                <span>
-                  {" "}
-                  Me <i id="caretdown" class="bi bi-caret-down-fill"></i>
-                </span>
+                <i className="bi bi-person-circle"></i> <span> Me</span>
               </Nav.Link>
 
               <Nav.Link id="work-icon">
-                <i className="bi bi-grid-3x3-gap-fill"></i>{" "}
-                <span>
-                  {" "}
-                  Work <i id="caretdown" class="bi bi-caret-down-fill"></i>
-                </span>
+                <i className="bi bi-grid-3x3-gap-fill"></i> <span> Work</span>
               </Nav.Link>
               <Nav.Link id="reactivate">
                 <span>
