@@ -44,5 +44,5 @@ export default function GetPost(props) {
     });
   }
 
-  return <div>{mapPosts()}</div>;
+  return <div>{mapPosts().reverse()}</div>;
 }

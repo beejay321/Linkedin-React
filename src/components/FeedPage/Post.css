@@ -194,7 +194,6 @@ hr {
 .RightColumn-card {
   border-radius: 10px !important;
   overflow: hidden;
-  position: fixed;
 }
 .RightColumn-card .card-header {
   padding-bottom: 0;
@@ -213,4 +212,8 @@ hr {
   font-weight: 500px;
   color: red;
   vertical-align: baseline;
+}
+
+RightColumnTwo-card {
+  position: sticky;
 }

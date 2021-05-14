@@ -3,7 +3,7 @@ import "../Post.css";
 
 export default function RightColumnTwo() {
   return (
-    <Card className="RightColumn-card">
+    <Card className="RightColumn-card RightColumnTwo-card">
       <Card.Header className="bg-white">
         <span>Today's most viewed courses</span>
         <i class="bi bi-info-square-fill"></i>
@@ -19,6 +19,7 @@ export default function RightColumnTwo() {
           <p>3. Only available for a limited time</p>
         </Card.Text>
         <Card.Text>
+          "plus-icon"
           <span className="text-muted">
             Show more LinkedIn Learning <i class="bi bi-arrow-right"></i>
           </span>
