@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-// import { Modal } from "react-responsive-modal";
-import {
-  Modal,
-  Button,
-  Form,
-  FormControl,
-  Col,
-  Row,
-  InputGroup,
-} from "react-bootstrap";
+import { Modal, Button, Col, Row } from "react-bootstrap";
 
 class MediaModal extends Component {
   state = {
@@ -77,13 +68,13 @@ class MediaModal extends Component {
           <div id="selectimages">
             <form enctype="multipart/form-data" method="post" name="fileinfo">
               <input
-                id="post-file"
+                id="postfile"
                 type="file"
                 name="file"
                 onChange={this.props.selectImage}
                 required
               />
-              <label for="post-file">
+              <label for="postfile">
                 <Row>
                   <Col>
                     <i className="bi bi-card-image"></i>

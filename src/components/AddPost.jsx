@@ -12,7 +12,6 @@ class AddPost extends React.Component {
   };
 
   submitPost = async (e) => {
-    // let's prevent the default browser behavior
     e.preventDefault();
     try {
       let response = await fetch(
@@ -50,8 +49,6 @@ class AddPost extends React.Component {
         } else {
           console.log("File was not uploaded!");
         }
-      } else {
-        console.log("Post was not successful!");
       }
     } catch (error) {
       console.log(`Something went wrong! ${error}`);
@@ -79,8 +76,6 @@ class AddPost extends React.Component {
   };
 
   render() {
-    // console.log(this.props);
-
     return (
       <>
         <Card>
@@ -105,7 +100,16 @@ class AddPost extends React.Component {
           </Card.Body>
           <Card.Body>
             <div className="addpostfooterbtn-section d-flex justify-content-between ">
-              <MediaModal id={this.state.post} />
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-card-image"></i>
+                  </Col>
+                  <Col className=" addposttext">
+                    <span> Photo</span>
+                  </Col>
+                </Row>
+              </Button>
 
               <Button className="addpostfooterbtn mx-1">
                 <Row>

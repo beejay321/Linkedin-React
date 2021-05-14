@@ -1,21 +1,10 @@
 // import React from "react";
 import React, { Component } from "react";
-import {
-  Modal,
-  Button,
-  Form,
-  FormControl,
-  Col,
-  Row,
-  InputGroup,
-} from "react-bootstrap";
-import { useState } from "react";
+import { Modal, Button, Form, Col, Row } from "react-bootstrap";
 import "../CardProfile.css";
-import MediaModal from "./MediaModal";
 
 class AddPostModal extends Component {
   state = {
-    post: null,
     show: false,
   };
 
@@ -109,7 +98,6 @@ class AddPostModal extends Component {
             </div>
 
             <div className="addpostfooterbtn-section d-flex justify-content-between ">
-            
               <Button className="addpostfooterbtn mx-1">
                 <Row>
                   <Col>
