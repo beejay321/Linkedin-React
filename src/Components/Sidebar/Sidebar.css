@@ -53,3 +53,12 @@
 #more {
   display: none;
 }
+.sidebar-person-name {
+  text-decoration: none;
+  font-weight: 500;
+  color: #0f0f0f;
+}
+.sidebar-person-name:hover {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
