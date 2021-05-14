@@ -11,25 +11,39 @@ class ExpEduCard extends React.Component {
     formRequest: "",
   }
 
-  handleEdit = (e) => {
+  handleEdit = async (e) => {
     e.preventDefault()
-    this.setState({ formRequest: "PUT" })
-    this.handleSubmit()
-  }
-
-  handleDelete = (e) => {
-    e.preventDefault()
-    this.setState({ formRequest: "DELETE" })
-    this.handleSubmit()
-  }
-
-  handleSubmit = async () => {
     console.log("ciaociao")
     try {
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences/${this.state.expId}`,
         {
-          method: this.state.formRequest === "PUT" ? "PUT" : "DELETE",
+          method: "PUT",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state.experience),
+        }
+      )
+      if (response.ok) {
+        const data = await response.json()
+        console.log(data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  handleDelete = async (e) => {
+    e.preventDefault()
+    console.log("ciaociao")
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences/${this.state.expId}`,
+        {
+          method: "DELETE",
           headers: {
             Authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
@@ -48,11 +62,38 @@ class ExpEduCard extends React.Component {
   }
 
   handleChange = (e) => {
+    e.preventDefault()
+    console.log("stuff changing")
     let id = e.target.id
     this.setState({
       experience: { ...this.state.experience, [id]: e.target.value },
     })
+    console.log(this.state.experience)
   }
+
+  // handleDelete =  async(e) => {
+  //   e.preventDefault()
+  //   console.log("ciaociao")
+  //   try {
+  //     const response = await fetch(
+  //       `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences/${this.state.expId}`,
+  //       {
+  //         method: "DELETE",
+  //         headers: {
+  //           Authorization:
+  //             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(this.state.experience),
+  //       }
+  //     )
+  //     if (response.ok) {
+  //       const data = await response.json()
+  //       console.log(data)
+  //     }
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
 
   render() {
     return (
