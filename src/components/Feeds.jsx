@@ -3,7 +3,8 @@ import "../CardProfile.css";
 import AddPost from "./AddPost";
 import GetPost from "./FeedPage/GetPost";
 import React from "react";
-
+import LeftColumnHomeFeed from "./FeedPage/LeftColumn/LeftColumnHomeFeed";
+import RightColumnHomeFeed from "./FeedPage/RightColumnHomeFeed";
 class Feeds extends React.Component {
   state = {
     user: {},
@@ -37,12 +38,15 @@ class Feeds extends React.Component {
       <>
         <Container className="mt-5">
           <Row>
-            <Col xs={3}>{/* <h1>first column</h1> */}</Col>
+            <Col xs={3}>
+              {/* <h1>first column</h1> */}
+              <LeftColumnHomeFeed />
+            </Col>
             <Col xs={6}>
               <AddPost image={this.state.user.image} />
               <GetPost image={this.state.user.image} />
             </Col>
-            <Col xs={3}>{/* <h1>third column</h1> */}</Col>
+            <Col xs={3}>{/* <RightColumnHomeFeed /> */}</Col>
           </Row>
         </Container>
       </>

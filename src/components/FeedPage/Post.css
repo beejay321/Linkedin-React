@@ -1,3 +1,7 @@
+.getPost-card {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
 .getPost-img {
   border-radius: 50%;
   height: 50px;
@@ -41,5 +45,40 @@ body {
 .addpost-img {
   border-radius: 10px;
   height: 150px;
-  /* width: 150px; */
+}
+/* width: 150px; */
+/*--------------LeftColumn*/
+.feedLeft-card {
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.feedLeft-profile-img {
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid white;
+  height: 80px;
+  width: 80px;
+  margin: auto;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.feedLeft-cover-img {
+  height: 10rem;
+  background: url("https://images.photowall.com/products/60869/azores-mountain-landscape-1.jpg?h=699&q=85");
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.img-container {
+  height: 10rem;
+  background: url("https://images.photowall.com/products/60869/azores-mountain-landscape-1.jpg?h=699&q=85");
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
