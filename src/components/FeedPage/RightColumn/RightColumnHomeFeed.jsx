@@ -1,10 +1,16 @@
 import RightColumnOne from "./RightColumnOne.jsx";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import React from "react";
+import RightColumnTwo from "./RightColumnTwo.jsx";
 
 class RightColumnHomeFeed extends React.Component {
   render() {
-    return <RightColumnOne />;
+    return (
+      <>
+        <RightColumnOne />
+        <RightColumnTwo />
+      </>
+    );
   }
 }
 
