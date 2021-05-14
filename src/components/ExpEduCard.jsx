@@ -9,7 +9,10 @@ class ExpEduCard extends React.Component {
     userId: this.props.userId,
     experience: { ...this.props.experience },
     formRequest: "",
+    expImage: null,
   }
+
+  inputFile = React.createRef()
 
   handleEdit = async (e) => {
     e.preventDefault()
@@ -30,6 +33,27 @@ class ExpEduCard extends React.Component {
       if (response.ok) {
         const data = await response.json()
         console.log(data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
+    console.log(this.inputFile)
+
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences/${this.state.expId}/picture`,
+        {
+          method: "POST",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
+          },
+          body: this.state.expImage,
+        }
+      )
+      if (response.ok) {
+        console.log("exp image uploaded")
       }
     } catch (error) {
       console.log(error)
@@ -71,29 +95,15 @@ class ExpEduCard extends React.Component {
     console.log(this.state.experience)
   }
 
-  // handleDelete =  async(e) => {
-  //   e.preventDefault()
-  //   console.log("ciaociao")
-  //   try {
-  //     const response = await fetch(
-  //       `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences/${this.state.expId}`,
-  //       {
-  //         method: "DELETE",
-  //         headers: {
-  //           Authorization:
-  //             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(this.state.experience),
-  //       }
-  //     )
-  //     if (response.ok) {
-  //       const data = await response.json()
-  //       console.log(data)
-  //     }
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
+  selectImage = (e) => {
+    e.preventDefault()
+    const file = e.target.files[0]
+    let formData = new FormData()
+    formData.append("experience", file)
+    this.setState({
+      expImage: formData,
+    })
+  }
 
   render() {
     return (
@@ -118,6 +128,8 @@ class ExpEduCard extends React.Component {
         <Col xs={2} className="d-flex justify-content-center edit-icon">
           <ModalForm
             formType="edit"
+            selectImage={this.selectImage}
+            inputFile={this.inputFile}
             handleDelete={this.handleDelete}
             handleSubmit={this.handleEdit}
             handleChange={this.handleChange}

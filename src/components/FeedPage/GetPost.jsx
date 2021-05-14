@@ -37,7 +37,8 @@ export default function GetPost(props) {
           title={post.user.title}
           updatedDate={post.updatedAt}
           postimage={post.image}
-          profile={props.image}
+          profilepic={props.image}
+          profile={post.user}
         />
       );
     });
