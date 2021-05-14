@@ -2,7 +2,7 @@ import React from "react";
 import "./Sidebar.css";
 import { Image, Row, Col, Button } from "react-bootstrap";
 
-function SidebarPerson(props) {
+const SidebarPerson = (props) => {
   return (
     <>
       <Row>
@@ -30,7 +30,7 @@ function SidebarPerson(props) {
       </Row>
     </>
   );
-}
+};
 
 export default SidebarPerson;
 // Your access token for Token Based Authentication is:
