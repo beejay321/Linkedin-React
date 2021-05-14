@@ -33,11 +33,11 @@ class LeftColumnHomeFeed extends React.Component {
   render() {
     return (
       <LeftColumnOne
-        name={this.state.user.name}
-        surname={this.state.user.surname}
-        title={this.state.user.title}
-        area={this.state.user.area}
-        image={this.state.user.image}
+        name={this.props.user.name}
+        surname={this.props.user.surname}
+        title={this.props.user.title}
+        area={this.props.user.area}
+        image={this.props.user.image}
       />
     );
   }

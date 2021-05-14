@@ -7,10 +7,10 @@ const LeftColumnOne = (props) => {
   return (
     <Card className="feedLeft-card">
       <Card.Header className="p-0">
-        <Image
+        {/* <Image
           className="feedLeft-cover-img img-fluid"
           src="https://via.placeholder.com/400x80/0000FF/808080/"
-        />
+        /> */}
         <Image className="feedLeft-profile-img" src={props.image} />
       </Card.Header>
       <Card.Body>
