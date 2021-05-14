@@ -5,7 +5,7 @@ import GetPost from "./FeedPage/GetPost";
 import React from "react";
 import LeftColumnHomeFeed from "./FeedPage/LeftColumn/LeftColumnHomeFeed";
 import RightColumnHomeFeed from "./FeedPage/RightColumn/RightColumnHomeFeed";
-
+import "./FeedPage/Post.css";
 class Feeds extends React.Component {
   state = {
     user: {},
@@ -37,7 +37,7 @@ class Feeds extends React.Component {
     console.log(this.state);
     return (
       <>
-        <Container className="mt-5">
+        <Container className="feed-container">
           <Col xs={{ offset: 1, span: 10 }}>
             <Row>
               <Col xs={3}>
