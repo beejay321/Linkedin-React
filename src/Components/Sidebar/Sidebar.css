@@ -45,15 +45,11 @@
   color: rgb(122, 122, 122);
 }
 
-#sidebar-showmore {
-  border-bottom: none;
-  border-top: 1px solid rgb(200, 200, 200);
-}
-
 #more {
   display: none;
 }
 .sidebar-person-name {
+  font-size: 14px;
   text-decoration: none;
   font-weight: 500;
   color: #0f0f0f;
@@ -61,4 +57,17 @@
 .sidebar-person-name:hover {
   text-decoration: underline !important;
   cursor: pointer;
+}
+
+.sidebar span {
+  font-size: 14px;
+}
+
+.sidebar p {
+  font-size: 13px;
+}
+#sidebar-showmore {
+  border-bottom: none;
+  border-top: 1px solid rgb(200, 200, 200);
+  text-decoration: none;
 }
