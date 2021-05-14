@@ -93,13 +93,15 @@ export default function ModalShow(props) {
               variant="outline-primary"
               onClick={handleClose}
             />
-            <Button
-              as="input"
-              type="button"
-              value="Delete"
-              variant="outline-primary"
-              onClick={props.handleDelete}
-            />
+            {props.formType === "edit" && (
+              <Button
+                as="input"
+                type="button"
+                value="Delete"
+                variant="outline-primary"
+                onClick={props.handleDelete}
+              />
+            )}
           </Modal.Footer>
         </Form>
       </Modal>
