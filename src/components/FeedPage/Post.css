@@ -189,8 +189,9 @@ hr {
   opacity: 0.1;
 }
 
-/*Right Column*/
+/*Right Columns*/
 
+/*Right Col One*/
 .RightColumn-card {
   border-radius: 10px !important;
   overflow: hidden;
@@ -214,6 +215,21 @@ hr {
   vertical-align: baseline;
 }
 
-RightColumnTwo-card {
-  position: sticky;
+.RightColumn-card .RightColumnTwo-card {
+  position: fixed;
+  font-size: 12px;
+}
+
+.RightColumn-card .RightColumnTwo-card .card-header {
+  font-size: 12px !important;
+}
+
+/*Right Col Two */
+#RC2-span {
+  font-size: 12px;
+}
+
+.bi-info-square-fill {
+  font-size: 14px;
+  padding-left: 10px;
 }
