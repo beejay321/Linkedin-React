@@ -4,7 +4,8 @@ import AddPost from "./AddPost";
 import GetPost from "./FeedPage/GetPost";
 import React from "react";
 import LeftColumnHomeFeed from "./FeedPage/LeftColumn/LeftColumnHomeFeed";
-import RightColumnHomeFeed from "./FeedPage/RightColumnHomeFeed";
+import RightColumnHomeFeed from "./FeedPage/RightColumn/RightColumnHomeFeed";
+
 class Feeds extends React.Component {
   state = {
     user: {},
@@ -46,7 +47,10 @@ class Feeds extends React.Component {
               <AddPost image={this.state.user.image} />
               <GetPost image={this.state.user.image} />
             </Col>
-            <Col xs={3}>{/* <RightColumnHomeFeed /> */}</Col>
+            <Col xs={3}>
+              <RightColumnHomeFeed />
+            </Col>
+            <GetPost />
           </Row>
         </Container>
       </>

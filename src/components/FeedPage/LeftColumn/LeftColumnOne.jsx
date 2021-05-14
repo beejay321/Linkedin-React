@@ -1,36 +1,69 @@
 import React from "react";
 import "../Post.css";
-import { Card, Col, Row, Image, Divider, Container } from "react-bootstrap";
+import { Card, Col, Image, Divider, Container, Item } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const LeftColumnOne = (props) => {
   return (
     <Card className="feedLeft-card">
-      <Card.Header className="p-0">
-        {/* <Image
-          className="feedLeft-cover-img img-fluid"
-          src="https://via.placeholder.com/400x80/0000FF/808080/"
-        /> */}
+      <Card.Header id="feedLeft-card-header" className="p-0">
+        <Image
+          className="feedLeft-cover-img"
+          src="http://placeimg.com/500/150/arch"
+        />
         <Image className="feedLeft-profile-img" src={props.image} />
       </Card.Header>
-      <Card.Body>
-        <span>
-          Hello
-          {props.name}
-          {props.lastname}
-        </span>
-        <p className="text-muted">{props.title}</p>
+      <Card.Body className="mt-5  p-0">
+        <Card.Title className="text-center">
+          <Card.Link>
+            {props.name} {props.surname}
+          </Card.Link>
+        </Card.Title>
+        <Card.Subtitle>
+          <p className="text-muted text-center">{props.title}</p>
+        </Card.Subtitle>
+        <hr />
+        <Card.Text className="m-0 py-0 px-3">
+          <Card.Link>
+            <p className="floatleft p-0 me-0">
+              Connections
+              <br />
+              <span>Grow your network</span>
+            </p>
+            <p className="floatright p-0 m-0">76</p>
+            <br className="m-0 p-0" />
+          </Card.Link>
+        </Card.Text>
+        <br />
+        <Card.Text className="m-0 p-0 px-3">
+          <Card.Link>
+            <p className="floatleft p-0 m-0">Who viewed your profile</p>
+            <p className="floatright">21</p>
+          </Card.Link>
+          <br className="m-0 p-0" />
+        </Card.Text>
+        <br className="m-0 p-0" />
+        <hr className="m-0" />
+        <Card.Text className="m-0 p-0  px-3">
+          <Card.Link>
+            <p>Only available for a limited time</p>
+            <p>
+              <i class="bi bi-linkedin" viewBox="0 0 16 16"></i>
+              Reactivate Premium : 50% Off
+            </p>
+          </Card.Link>
+        </Card.Text>
+
+        <hr className="p-0 m-0" />
+        <Card.Text className="m-0 p-0  px-3">
+          <Card.Link>
+            <p>
+              <i class="bi bi-bookmark-fill"></i>My Items
+            </p>
+          </Card.Link>
+        </Card.Text>
       </Card.Body>
-      <Card.Body>
-        <p>aaaaaaaaaaaaaa</p>
-        <p>{props.name}</p>
-        <hr />
-        <p>Connections</p>
-        <hr />
-        <p>Connections</p>
-        <hr />
-        <p>Connections</p>
-      </Card.Body>
+      <div></div>
     </Card>
   );
 };
