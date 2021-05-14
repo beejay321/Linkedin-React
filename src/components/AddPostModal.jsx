@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import React, { Component } from "react";
 import {
   Modal,
   Button,
@@ -12,83 +13,114 @@ import { useState } from "react";
 import "../CardProfile.css";
 import MediaModal from "./MediaModal";
 
-const AddPostModal = (props) => {
-  const [show, setShow] = useState(false);
+class AddPostModal extends Component {
+  state = {
+    post: null,
+    show: false,
+  };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  onClickButton = (e) => {
+    e.preventDefault();
+    this.setState({ openModal: true });
+  };
+  onCloseModal = () => {
+    this.setState({ openModal: false });
+  };
 
-  return (
-    <>
-      <Button
-        onClick={handleShow}
-        id="postbutton"
-        variant="outline"
-        size="md"
-        className="text-muted "
-      >
-        Start a Post
-      </Button>
+  render() {
+    return (
+      <>
+        <Button
+          onClick={this.onClickButton}
+          id="postbutton"
+          variant="outline"
+          size="md"
+          className="text-muted "
+        >
+          Start a Post
+        </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Create a post</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form.Group>
-            <Form.Control
-              id="text"
-              // value={props.text}
-              onChange={props.handleChange}
-              as="textarea"
-              rows={3}
-              placeholder="What do you want to talk about?"
-            />
-          </Form.Group>
-        </Modal.Body>
-        <Modal.Body className="d-flex justify-content-between ">
-          <div className="addpostfooterbtn-section d-flex justify-content-between ">
-            <Button className="addpostfooterbtn mx-1">
-              <Row>
-                <Col>
-                  <MediaModal id={props.id} />
-                </Col>
-              </Row>
-            </Button>
+        <Modal show={this.state.openModal} onHide={this.onCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Create a post</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group>
+              <Form.Control
+                id="text"
+                // value={props.text}
+                onChange={this.props.handleChange}
+                as="textarea"
+                rows={3}
+                placeholder="What do you want to talk about?"
+              />
+            </Form.Group>
+          </Modal.Body>
+          <Modal.Body className="d-flex justify-content-between ">
+            <div className="addpostfooterbtn-section d-flex justify-content-between ">
+              <Button className="addpostfooterbtn mx-1">
+                <div id="selectimages">
+                  <form
+                    enctype="multipart/form-data"
+                    method="post"
+                    name="fileinfo"
+                  >
+                    <input
+                      id="post-file"
+                      type="file"
+                      name="file"
+                      onChange={this.props.selectImage}
+                      required
+                    />
+                    <label for="post-file">
+                      <Row>
+                        <Col>
+                          <i className="bi bi-card-image"></i>
+                        </Col>
+                      </Row>
+                    </label>
+                  </form>
+                </div>
+              </Button>
 
-            <Button className="addpostfooterbtn mx-1">
-              <Row>
-                <Col>
-                  <i className="bi bi-camera-video-fill"></i>
-                </Col>
-              </Row>
-            </Button>
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-camera-video-fill"></i>
+                  </Col>
+                </Row>
+              </Button>
 
-            <Button className="addpostfooterbtn mx-1">
-              <Row>
-                <Col>
-                  <i className="bi bi-calendar-event"></i>
-                </Col>
-              </Row>
-            </Button>
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-calendar-event"></i>
+                  </Col>
+                </Row>
+              </Button>
 
-            <Button className="addpostfooterbtn mx-1">
-              <Row>
-                <Col>
-                  <i className="bi bi-blockquote-right"></i>
-                </Col>
-              </Row>
-            </Button>
-          </div>
-          <div>
-            <Button onClick={props.submitPost} type="submit" variant="primary">
-              Post
-            </Button>
-          </div>
-        </Modal.Body>
-      </Modal>
-    </>
-  );
-};
+              <Button className="addpostfooterbtn mx-1">
+                <Row>
+                  <Col>
+                    <i className="bi bi-blockquote-right"></i>
+                  </Col>
+                </Row>
+              </Button>
+            </div>
+            <div>
+              <Button
+                onClick={this.props.submitPost}
+                type="submit"
+                variant="primary"
+              >
+                Post
+              </Button>
+            </div>
+          </Modal.Body>
+        </Modal>
+      </>
+    );
+  }
+}
 
 export default AddPostModal;

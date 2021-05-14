@@ -47,8 +47,10 @@
   padding-left: 0px !important;
 }
 #selectimages {
-  height: 10rem;
-display: flex;
-justify-content: center;
-align-content: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#post-file {
+  width: 0;
 }
