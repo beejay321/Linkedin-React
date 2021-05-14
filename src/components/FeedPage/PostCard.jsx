@@ -119,7 +119,16 @@ function PostCard(props) {
                     aria-label="Text input with checkbox"
                     placeholder="Add a comment..."
                   />
-                  <MediaModal id={props.id} />
+                  <div className="addpostfooterbtn-section d-flex justify-content-between ">
+                    <Button className="addpostfooterbtn mx-1">
+                      <Row>
+                        <Col>
+                          <i className="bi bi-card-image"></i>
+                        </Col>
+                      </Row>
+                    </Button>
+                  </div>
+                  {/* <MediaModal id={props.id} /> */}
 
                   <Button
                     className="getPost-commentSend-btn mx-1"
